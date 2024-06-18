@@ -1,0 +1,276 @@
+\documentclass[12pt]{article}
+\input{confugiration.tex}
+\fancyhead[L]{Assignment 2; Discrete Random Variables}
+\author{Muhammet Yağcıoğlu - 290204042}
+\usepackage{hyperref} 
+
+\begin{document}
+\maketitle\thispagestyle{fancy}
+\pagestyle{fancy}
+\tableofcontents
+\newpage
+\section*{Question 1}
+\addcontentsline{toc}{section}{Question 1}
+\begin{q}
+Q1) (30p) The sources of electrical power for a region nuclear, fossil, and hydroelectric. The respective generating capacities of these sources can be described as independent Gaussian random variables as follows (in megawatt power):
+\[
+\begin{aligned}
+& \text { Nuclear: N }(100,15) \\
+& \text { Fossil: N }(200,40) \\
+& \text { Hydro: N }(400,100)
+\end{aligned}
+\]
+
+\textbf{(a)} Determine the total power supply for the region; i.e., define the probability distribution of the power supply with the corresponding mean and standard deviation.
+\textbf{(b)} The power demand of the region during normal weather is 400 megawatts, whereas during extreme weather the demand would be 600 megawatts. In any given year, normal weather is twice as likely to occur as extreme weather. With the generating capacity of (a), what is the probability that power shortage for the region will occur during the year?
+\end{q}
+
+\subsection*{Part a}
+\addcontentsline{toc}{section}{Part a}
+
+Let \(X_n\), \(X_f\), and \(X_h\) denote the random variables representing the generating capacities of nuclear, fossil, and hydroelectric sources, respectively. We are given that these variables are independent and normally distributed: \[X_n \sim \mathcal{N}(100, 15^2), \quad X_f \sim \mathcal{N}(200, 40^2), \quad X_h \sim \mathcal{N}(400, 100^2).\] Let the total power supply, denoted by \(S\), is the sum of these individual capacities: \(S = X_n + X_f + X_h\). We invoke the Theorem of Sum of Independent Normal Random Variables, stipulating that if \(X_1, X_2, ..., X_n\) are independent normal random variables with means \(\mu_1, \mu_2, ..., \mu_n\) and variances \(\sigma_1^2, \sigma_2^2, ..., \sigma_n^2\), then their sum \(Y = X_1 + X_2 + ... + X_n\) is also normally distributed with mean \(\mu_Y = \mu_1 + \mu_2 + ... + \mu_n\) and variance \(\sigma_Y^2 = \sigma_1^2 + \sigma_2^2 + ... + \sigma_n^2\). Applying this theorem to our scenario, we deduce: \[\mu_S = \mu_{X_n} + \mu_{X_f} + \mu_{X_h} = 100 + 200 + 400 = 700 \, \text{MW},\] \[\sigma_S = \sqrt{\sigma_{X_n}^2 + \sigma_{X_f}^2 + \sigma_{X_h}^2} = \sqrt{15^2 + 40^2 + 100^2} \approx 109 \, \text{MW}.\]
+\AnswerTag
+
+\subsection*{Part b}
+\addcontentsline{toc}{section}{Part b}
+
+Let \(D\) denote the power demand of the region. Given that normal weather (\(N\)) is twice as likely as extreme weather (\(\bar{N}\)), we establish \(P(N) = \frac{2}{3}\) and \(P(\bar{N}) = \frac{1}{3}\). The probability of a power shortage conditioned on normal weather is \[P(S < D \mid N) = P(S < d_N) = \Phi\left(\frac{d_N - \mu_S}{\sigma_S}\right),\] where \(d_N = 400\) MW. Evaluating this yields \(P(S < D \mid N) = \Phi(-2.75) \approx 0.0029\). Similarly, the probability of a power shortage conditioned on extreme weather is: \[P(S < D \mid \bar{N}) = P(S < d_{\bar{N}}) = \Phi\left(\frac{d_{\bar{N}} - \mu_S}{\sigma_S}\right)=\Phi\left(\frac{600[M W]-700[M W]}{109[M W]}\right) = \Phi(-0.91),\] where \(d_{\bar{N}} = 600\) MW. The computation results in \(P(S < D \mid \bar{N}) = \Phi(-0.91) \approx 0.18\). Finally, the probability of a power shortage, \(P(S)\), is determined by the law of total probability: \[P(S) = P(N \cap S < d_N \cup \bar{N} \cap S < d_{\bar{N}}) = P(S < D \mid N) P(N) + P(S < D \mid \bar{N}) P(\bar{N}),\] \[ \begin{aligned} & =P(S \mid N) P(N)+P(S \mid \bar{N}) P(\bar{N}) \\ & =0.0029 \frac{2}{3}+0.18 \frac{1}{3}=\underline{0.6156} \end{aligned} \]
+
+\AnswerTag
+
+\begin{figure}[ht!]
+  \centering
+\begin{tikzpicture}[scale=1.7]
+  \begin{axis}[
+    no markers, domain=0:800, samples=100,
+    axis lines*=left, xlabel=Power Supply (MW), ylabel=Density,
+    height=6cm, width=10cm,
+    xtick={100,200,400,700}, ytick=\empty,
+    enlargelimits=false, clip=false, axis on top,
+    grid = major
+    ]
+    \addplot [fill=blue!20, draw=none, domain=70:130] {gauss(100,15)} \closedcycle;
+    \addplot [fill=red!20, draw=none, domain=140:260] {gauss(200,40)} \closedcycle;
+    \addplot [fill=green!20, draw=none, domain=250:550] {gauss(400,100)} \closedcycle;
+    \addplot [fill=brown!20, draw=none, domain=140:260] {gauss(700,109)} \closedcycle;
+    \addplot [smooth, thick, blue] {gauss(100,15)};
+    \addplot [smooth, thick, red] {gauss(200,40)};
+    \addplot [smooth, thick, green] {gauss(400,100)};
+    \addplot [smooth, thick, brown] {gauss(700,109)};
+
+    \draw [dashed] ({axis cs:400,0}|-{rel axis cs:0,0}) -- ({axis cs:400,0}|-{rel axis cs:0,1});
+    \draw [dashed] ({axis cs:600,0}|-{rel axis cs:0,0}) -- ({axis cs:600,0}|-{rel axis cs:0,1});
+% Annotations
+    \node at (axis cs: 100,0.008) [anchor=north, blue] {\tiny Nuclear};
+    \node at (axis cs: 200,0.003) [anchor=north, red] {\tiny Fossil};
+    \node at (axis cs: 400,0.002) [anchor=north, green] {\tiny Hydro};
+    \node at (axis cs: 700,0.0015) [anchor=south, black] {\tiny Total};
+    \draw[<->, thick] (axis cs: 0,0.0035) -- node[above] {\tiny Probability of Shortage} (axis cs:400,0.0035);
+  
+  \end{axis}
+\end{tikzpicture}
+\end{figure}
+
+\vfill
+\begin{flushright}
+\textbf{ans.} \(X_S \sim \mathcal{N}(700, 109^2), P(S)=0.6156.\)
+\end{flushright}
+
+
+\newpage
+\section*{Question 2}
+\addcontentsline{toc}{section}{Question 2}
+\begin{q}
+Q2) (30p) The permeability of a membrane used as a moisture barrier in a biological application depends on the thickness of two integrated layers. The layers are normally distributed with means of 0.5 and 1 millimeters, respectively. The standard deviations of layer thickness are 0.1 and 0.2 millimeters, respectively. The correlation between layers is 0.7
+(a) Determine the mean and variance of the total thickness of the two layers.
+(b) What is the probability that the total thickness is less than 1 millimeter?
+(c) Let \(X_1\) and \(X_2\) denote the thickness of layers 1 and 2, respectively. A measure of performance of the membrane is a function \(2 X_1+3 X_2\) of the thickness. Determine the mean and variance of this performance measure.
+\end{q}
+
+
+We introduce the random variables \(X_1\) and \(X_2\) to denote the thicknesses of the first and second layers of the membrane, respectively. These variables are modeled as Gaussian distributed, with \(X_1 \sim \mathcal{N}(0.5, 0.1^2)\) and \(X_2 \sim \mathcal{N}(1, 0.2^2)\). The correlation coefficient between \(X_1\) and \(X_2\) is given as \(\rho = 0.7\). 
+
+\subsection*{Part a}
+\addcontentsline{toc}{section}{Part a}
+The total thickness of the membrane is represented by the random variable \(Y = X_1 + X_2\). Since \(X_1\) and \(X_2\) are linear combinations of Gaussian variables, \(Y\) is also Gaussian. The mean of \(Y\), denoted as \(\mathbb{E}[Y]\), is the sum of the means of \(X_1\) and \(X_2\): \[ \mathbb{E}[Y] = \mathbb{E}[X_1] + \mathbb{E}[X_2] = 0.5 + 1 = 1.5 \, \text{mm}. \] The variance of \(Y\), denoted as \(\text{Var}(Y)\), incorporates both individual variances and the covariance between \(X_1\) and \(X_2\), given by \(\text{Cov}(X_1, X_2) = \rho \sigma_{X_1} \sigma_{X_2}\). Thus, \[ \text{Var}(Y) = \text{Var}(X_1) + \text{Var}(X_2) + 2\text{Cov}(X_1, X_2) = (0.1)^2 + (0.2)^2 + 2 \times 0.7 \times 0.1 \times 0.2 = 0.078 \, \text{mm}^2. \]
+\AnswerTag
+
+\subsection*{Part b}
+\addcontentsline{toc}{section}{Part b}
+To find the probability that the total thickness is less than 1 mm, we consider the standardized variable \(Z = \frac{Y - \mathbb{E}[Y]}{\sqrt{\text{Var}(Y)}}\). The probability in question is \(P(Y < 1)\), which translates to \(P\left(Z < \frac{1 - 1.5}{\sqrt{0.078}}\right)\). This is a basic computation involving the standard normal distribution: \[ P(Y < 1) = P\left(Z < \frac{1 - 1.5}{\sqrt{0.078}}\right) = P(Z < -1.79) \approx 0.0367. \]
+\AnswerTag
+
+\subsection*{Part c}
+\addcontentsline{toc}{section}{Part c}
+The performance measure is a function of the membrane's thickness, given by \(T = 2X_1 + 3X_2\). To determine the mean \(\mathbb{E}[T]\) and variance \(\text{Var}(T)\) of this measure, we apply linear transformation properties on \(X_1\) and \(X_2\). The mean of \(T\) is: \[ \mathbb{E}[T] = \mathbb{E}[2X_1 + 3X_2] = 2\mathbb{E}[X_1] + 3\mathbb{E}[X_2] = 2 \times 0.5 + 3 \times 1 = 4 \, \text{mm}. \] The variance of \(T\) incorporates the variances and covariance of \(X_1\) and \(X_2\): \[ \text{Var}(T) = \text{Var}(2X_1 + 3X_2) = 4\text{Var}(X_1) + 9\text{Var}(X_2) + 12\text{Cov}(X_1, X_2)\] \[=4 \times (0.1)^2 + 9 \times (0.2)^2 + 12 \times 0.7 \times 0.1 \times 0.2 = 0.568 \, \text{mm}^2. \]
+\AnswerTag
+
+\vfill
+\begin{flushright}
+\textbf{ans.} \(\mathbb{E}[Y] = 1.5 \, \text{mm}, \text{Var}(Y)=0.078 \, \text{mm}^2. P(Y < 1) \approx 0.0367. \mathbb{E}[T]=4 \, \text{mm},  \text{Var}(T) =  0.568 \, \text{mm}^2.\)
+\end{flushright}
+
+
+
+
+\newpage
+\section*{Question 3}
+\addcontentsline{toc}{section}{Question 3}
+\begin{q}
+Q3) (40p) Suppose the annual maximum stream flow of a given river has been observed for 10 years yielding the following statistics:
+\[
+\texttt{Sample mean:}\quad 10^6 \mathrm{~m}^3/\mathrm{h}
+\]
+\[
+\texttt{Sample variance:} \quad  9 \times 10^8\left(\mathrm{~m}^3 / \mathrm{h}\right)^2
+\]
+(a) Establish the two-sided \(90 \%\) confidence interval on the mean annual maximum stream flow. Assume a normal population.
+(b) If the desired to estimate the mean annual maximum stream flow to within \(\pm 30000 \mathrm{~m}^3 / \mathrm{h}\) with \(90 \%\) confidence, how many additional years of observation will be require? Assume the sample variance based on the new set of data will be approximately \(9 \times 10^8\left(\mathrm{~m}^3 / \mathrm{h}\right)^2\).
+\end{q}
+Let us denote the annual maximum stream flow as a random variable \( X \) in the probability space \((\Omega, \mathcal{F}, P)\), where \( \Omega \) is the sample space, \( \mathcal{F} \) a sigma-algebra of events, and \( P \) the probability measure. The random variable \( X: \Omega \to \mathbb{R} \) is assumed to be normally distributed, which situates its range within the manifold of real numbers, \( \mathbb{R} \), under the Gaussian measure. Given a sample of size \( n \) from this distribution, represented as \( \{X_1, X_2, \ldots, X_n\} \), the sample mean \( \bar{X} \) and sample variance \( S^2 \) are estimators for the population parameters \( \mu \) and \( \sigma^2 \), respectively. In this scenario, \( \bar{X} = 10^6 \, \text{m}^3/\text{h} \) and \( S^2 = 9 \times 10^8 \, (\text{m}^3/\text{h})^2 \) with \( n = 10 \).
+\subsection*{Part a}
+\addcontentsline{toc}{section}{Part a}
+To construct a 90\% confidence interval for \( \mu \), we utilize the t-distribution, a pivotal quantity stemming from the fact that \( \frac{\bar{X} - \mu}{S/\sqrt{n}} \) follows a Student's t-distribution with \( n-1 \) degrees of freedom under the assumption of normality. The two-sided 90\% confidence interval for \( \mu \) is given by: \[ CI = \left[ \bar{X} - t_{\alpha/2, n-1} \frac{S}{\sqrt{n}}, \bar{X} + t_{\alpha/2, n-1} \frac{S}{\sqrt{n}} \right] \] Where \( \alpha = 0.1 \) and \( t_{\alpha/2, n-1} \) is the critical value from the t-distribution. This interval embodies the essence of inferential statistics: it provides a range within which the true parameter \( \mu \) is expected to lie with a specified level of confidence. In applying these principles, we extract \( t_{0.05, 9} \) from the t-distribution, recognizing this critical value as a fundamental threshold in the realm of probability distributions. The substitution of these values into the formula yields the desired confidence interval: \[ CI = \left[ 10^6 - t_{0.05, 9} \frac{\sqrt{9 \times 10^8}}{\sqrt{10}}, 10^6 + t_{0.05, 9} \frac{\sqrt{9 \times 10^8}}{\sqrt{10}} \right] \cong \left[8261 \, \text{m}^3/\text{h}, 11739 \, \text{m}^3/\text{h}\right].\]
+\AnswerTag
+
+
+
+
+
+
+\subsection*{Part b}
+\addcontentsline{toc}{section}{Part b}
+We consider a random variable \( X \), representing the annual maximum stream flow, which follows a normal distribution as established earlier. The sample mean \( \bar{X} \) and sample variance \( S^2 \) are estimators of the population mean \( \mu \) and variance \( \sigma^2 \). Our goal is to determine the required sample size \( n_{\text{new}} \) such that the margin of error \( E \) in estimating \( \mu \) does not exceed \( \pm 30000 \, \text{m}^3/\text{h} \) with 90\% confidence. The margin of error in the context of a t-distribution is given by: \[ E = t_{\alpha/2, n_{\text{new}}-1} \cdot \frac{S}{\sqrt{n_{\text{new}}}} \] where \( \alpha = 0.1 \) and \( t_{\alpha/2, n_{\text{new}}-1} \) is the critical value from the t-distribution for \( n_{\text{new}}-1 \) degrees of freedom. To solve for \( n_{\text{new}} \), we recognize that \( t_{\alpha/2, n_{\text{new}}-1} \) varies with \( n_{\text{new}} \), necessitating an iterative approach. Rearranging the margin of error formula, we obtain: \[ n_{\text{new}} = \left( \frac{t_{\alpha/2, n_{\text{new}}-1} \cdot S}{E} \right)^2 \] Given \( S^2 = 9 \times 10^8 \, (\text{m}^3/\text{h})^2 \) and \( E = 30000 \, \text{m}^3/\text{h} \), we iteratively adjust \( n_{\text{new}} \) and compute the corresponding \( t_{\alpha/2, n_{\text{new}}-1} \) until the margin of error is less than or equal to the desired threshold.
+
+\begin{multicols}{2}
+\begin{lstlisting}
+% Define the parameters
+alpha = 0.1;      % Significance level for 90% confidence (two-tailed)
+n = 15;           % Starting sample size
+
+% Initialize arrays to store the results
+sample_sizes = [];
+t_values = [];
+ratios = [];
+
+% Iteratively calculate t-values and ratios
+while true
+    t_value = tinv(1 - alpha/2, n - 1);  % t-value for the current sample size
+    ratio = t_value / sqrt(n);           % Ratio t/sqrt(n)
+    
+    % Store the results
+    sample_sizes = [sample_sizes, n];
+    t_values = [t_values, t_value];
+    ratios = [ratios, ratio];
+    
+    % Check if the ratio is less than 1/3, if so, stop the loop
+    if ratio < 1/3
+        break;
+    end
+    n = n + 1;
+end
+
+% Create a table with the results
+results_table = table(sample_sizes', t_values', ratios', ...
+                      'VariableNames', {'Sample_Size', 't_0_05_n_minus_1', 'Ratio_t_over_sqrt_n'});
+
+disp(results_table);
+writetable(results_table, 'SampleSizeCalculations.csv');
+\end{lstlisting}
+\end{multicols}
+
+\subsubsection*{Output}
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline \texttt{Sample\_size} & \texttt{t\_0\_05\_n\_minus\_1} & \texttt{Ratio\_t\_over\_sqrt\_n} \\
+\hline 15 & 1.7613 & 0.45477 \\
+\hline 16 & 1.7531 & 0.43826 \\
+\hline 17 & 1.7459 & 0.42344 \\
+\hline 18 & 1.7396 & 0.41003 \\
+\hline 19 & 1.7341 & 0.39782 \\
+\hline 20 & 1.7291 & 0.38665 \\
+\hline 21 & 1.7247 & 0.37636 \\
+\hline 22 & 1.7207 & 0.36686 \\
+\hline 23 & 1.7171 & 0.35805 \\
+\hline 24 & 1.7139 & 0.34984 \\
+\hline 25 & 1.7109 & 0.34218 \\
+\hline 26 & 1.7081 & 0.33499 \\
+\hline 27 & 1.7056 & 0.32825 \\
+\hline
+\end{tabular}
+\end{center}
+
+
+
+Following the iterative calculation using MATLAB, it has been established that a sample size of 27 is sufficient to ensure that the margin of error in estimating the mean annual maximum stream flow does not exceed \( \pm 30000 \, \text{m}^3/\text{h} \) at a 90\% confidence level. Given that the initial dataset encompassed observations over 10 years, the requirement for additional observations can be deduced. To reach the requisite sample size of 27, an additional \( 27 - 10 = 17 \) years of observation will be necessary.
+
+
+\subsubsection*{Algorithm Table for Adaptation to Other Languages}
+\begin{center}
+\begin{algorithm}
+\caption{Determination of Required Sample Size on a Statistical Manifold}
+\begin{algorithmic}[1]
+\State $\alpha \gets 0.1$ \Comment{Significance level}
+\State $n \gets 15$ \Comment{Initial sample size}
+\State $\theta \gets \frac{1}{3}$ \Comment{Ratio limit}
+\While{True}
+    \State $t_{\text{value}} \gets \Call{Tinv}{1 - \frac{\alpha}{2}, n - 1}$
+    \State $\rho \gets \frac{t_{\text{value}}}{\sqrt{n}}$
+    \If{$\rho < \theta$}
+        \State \textbf{break}
+    \EndIf
+    \State $n \gets n + 1$
+\EndWhile
+\State \textbf{return} $n$
+\end{algorithmic}
+\end{algorithm}
+\end{center}
+\vfill
+\begin{flushright}
+\textbf{ans.} \(CI\cong \left[8261 \, \text{m}^3/\text{h}, 11739 \, \text{m}^3/\text{h}\right], 17.\)
+\end{flushright}
+\newpage
+
+\begin{figure}
+    \centering
+    \begin{tikzpicture}[scale=1.4]
+    \begin{axis}[
+        no markers, domain=0:20, samples=2000,
+        axis lines*=left, xlabel=$X$ (Stream Flow), ylabel=$f(X)$,
+        height=6cm, width=12cm,
+        xtick={5,10,15}, ytick=\empty,
+        enlargelimits=false, clip=false, axis on top,
+        grid = major,
+        xticklabels={$\mu - \delta$, $\mu$, $\mu + \delta$},
+        extra x ticks={10},
+        extra x tick labels={$10^6$},
+        title={Normal Distribution of Annual Maximum Stream Flow}
+        ]
+        
+        % Normal distribution curve
+        \addplot [fill=cyan!20, draw=none, domain=5:15] {gauss(10,3)} \closedcycle;
+        \addplot [very thick,cyan!50!black] {gauss(10,3)};
+
+        % Confidence Interval
+        \draw [yshift=-1.5cm, latex-latex](axis cs:5, 0) -- node [fill=white] {90\% Confidence Interval} (axis cs:15, 0);
+
+        % Sample Size Calculation Arrow
+        \draw[red, thick, ->] (axis cs: 21,0.01) -- (axis cs: 21, 0.12);
+        \node[align=center, anchor=west, red] at (axis cs: 21, 0.08) {Increasing \\ sample size};
+
+        % Labels
+        \node[anchor=west] at (axis cs: 4, 0.13) {Normal Distribution ($\mu = 10^6, \sigma^2 = 9 \times 10^8$)};
+        \node[align=center, anchor=east, blue] at (axis cs: 5.5, 0.06) {Lower Bound\\$\mu - t_{\alpha/2, n-1} \frac{S}{\sqrt{n}}$};
+        \node[align=center, anchor=west, blue] at (axis cs: 14.5, 0.06) {Upper Bound\\$\mu + t_{\alpha/2, n-1} \frac{S}{\sqrt{n}}$};
+    \end{axis}
+\end{tikzpicture}
+    \caption{}
+    \label{fig:enter-label}
+\end{figure}
+
+\vfill
+\begin{flushright}
+\textbf{ans.} \(CI\cong \left[8261 \, \text{m}^3/\text{h}, 11739 \, \text{m}^3/\text{h}\right], 17.\)
+\end{flushright}
+
+\end{document}

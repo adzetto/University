@@ -1,0 +1,129 @@
+\documentclass[12pt]{article}
+\input{confugiration.tex}
+\fancyhead[L]{CE 205 Statistical Methods for Engineers, Fall 2023, Homework-1 }
+\title{\vspace{-1cm}CE 205 - HW1}
+\author{Muhammet Yağcıoğlu - 290204042}
+\begin{document}
+\maketitle\thispagestyle{fancy}
+\pagestyle{fancy}
+\tableofcontents
+
+\newpage
+\section*{Question 1}
+\addcontentsline{toc}{section}{Question 1}
+\begin{q}
+Q1) (15p) There are 4 black, 5 yellow, and 6 red balls, how many selections of 6 balls are possible if 2 of each color to be selected?
+\end{q}
+Let us consider three distinct sets: \[ \mathcal{B} = \{b_1, b_2, b_3, b_4\},\] \[ \mathcal{Y} = \{y_1, y_2, \ldots, y_5\}, \] \[ \mathcal{R} = \{r_1, r_2, \ldots, r_6\}, \] where \(\mathcal{B}\) represents the set of black balls, \(\mathcal{Y}\) represents the set of yellow balls, and \(\mathcal{R}\) represents the set of red balls. \underline{I assume each element within its respective set is unique and distinguishable.} We are interested in constructing a manifold \(\mathcal{M}\) of selections, such that each point in this manifold corresponds to a unique combination of 2 balls from each set.  To do this, consider the mapping \(f: \mathcal{B} \times \mathcal{B} \to \mathcal{M}\) such that \(f(b_i, b_j)\) represents a unique selection of two balls from \(\mathcal{B}\). Extend this mapping to \(\mathcal{Y}\) and \(\mathcal{R}\) in a similar fashion.  The cardinality of possible mappings from \(\mathcal{B}\) is given by the binomial coefficient: \[ \text{Card} \big(f(\mathcal{B})\big) = \binom{4}{2}. \] Likewise, \[ \text{Card} \big(f(\mathcal{Y})\big) = \binom{5}{2},\] \[ \text{Card} \big(f(\mathcal{R})\big) = \binom{6}{2}. \] To find the total number of combinations, we look for the volume of the manifold \(\mathcal{M}\) formed by the Cartesian product of these mappings: \[ \mathcal{V}(\mathcal{M}) = |f(\mathcal{B})| \times |f(\mathcal{Y})| \times |f(\mathcal{R})|. \] This volume, \(\mathcal{V}(\mathcal{M})\), represents the total number of ways we can select 2 balls from each set. Evaluating this expression using \[ ^nC_r = \frac{n!}{r!(n-r)!}, \] we find \[ \mathcal{V}(\mathcal{M}) = \binom{4}{2} \times \binom{5}{2} \times \binom{6}{2} = \frac{4! 5! 6!}{((4-2)!) \times ((5-2)!) \times ((6-2)!) \times (2!)^3} = 900. \] Thus, the volume of the manifold \(\mathcal{M}\), or equivalently, the number of distinct ways to select 2 balls from each of the sets \(\mathcal{B}\), \(\mathcal{Y}\), and \(\mathcal{R}\), is 900. \AnswerTag
+
+\vfill
+\begin{flushright}
+\textbf{ans.} \(\mathcal{V}(\mathcal{M})=900.\)
+\end{flushright}
+
+\newpage
+\section*{Question 2}
+\addcontentsline{toc}{section}{Question 2}
+\begin{q}
+Q2) (15p) A pillbox contains 7 white pills and 8 yellow pills, 4 pills are drawn in succession, each pill being replaced in the box before the next draw is made. What is the probability that;
+
+\begin{itemize}
+\centering
+\item[i.]  all 4 are the same color?
+\item[ii.] each color is represented?
+\end{itemize}
+\end{q}
+
+Let us consider a pillbox \(\mathcal{B}\), that contains a finite set of pills. Within this set, there are two disjoint subsets: the set of white pills, \(W\), and the set of yellow pills, \(Y\). The cardinalities of these sets are given by \(|W| = 7\) and \(|Y| = 8\), respectively. Given the replacement of pills after each draw, the drawing process can be modeled as a series of Bernoulli trials. Let \(X\) be a random variable representing the color of the pill drawn, with \(X = w\) indicating a white pill and \(X = y\) indicating a yellow pill. The probabilities of drawing a white or yellow pill at any given trial are: \[ P(X = w) = \frac{|W|}{|W| + |Y|} \quad \text{and} \quad P(X = y) = \frac{|Y|}{|W| + |Y|}. \] \textit{Probability of Homogeneous Draws.} We aim to determine the probability that four consecutive draws yield pills of the same color. This can be calculated as: \[ P_1 = P(X_1 = w, X_2 = w, X_3 = w, X_4 = w) + P(X_1 = y, X_2 = y, X_3 = y, X_4 = y). \] Exploiting the independence of the draws, we have: \AnswerTag \[ P_1 = P(X = w)^4 + P(X = y)^4 = \left(\frac{7}{15}\right)^4+\left(\frac{8}{15}\right)^4 = 0.1283 \, (\approx 12.83\%). \] \textit{Probability of Heterogeneous Draws.} To ascertain the probability that both colors are represented in four consecutive draws, consider the three possible scenarios: \begin{itemize} \centering \item[(i)] Two pills of one color and two of the other. \item[(ii)] One pill of one color and three of the other. \item[(iii)] Three pills of one color and one of the other. \end{itemize} The probability for each scenario: \[ P_2(i) = \binom{4}{2} P(X = w)^2 P(X = y)^2, \] \[ P_2(ii) = \binom{4}{1} P(X = w) P(X = y)^3 ,\] \[ P_2(iii) = \binom{4}{3} P(X = w)^3 P(X = y). \] Summing up these probabilities gives: \AnswerTag \[ P_2 = P_2(i) + P_2(ii) + P_2(iii) = 0.8717 \, (\approx 87.17\%). \] It could also be calculated as: \[P_2=1-P_1 = 1- 0.1283 = 0.8717. \]
+
+
+
+
+
+\vfill
+\begin{flushright}
+\textbf{ans.} \(P_1 = 0.1283 \, (\approx 12.83\%), \quad P_2 = 0.8717 \, (\approx 87.17\%).\)
+\end{flushright}
+
+\newpage
+\section*{Question 3}
+\addcontentsline{toc}{section}{Question 3}
+\begin{q}
+Q3) (30p) A steel plate contains 15 bolts. Assume that 4 bolts are not torqued to the proper limit. Six bolts are selected at random, without replacement, to be checked for torque.
+\begin{itemize}
+\centering
+\item[i.]  What is the probability that all six of the selected bolts are torqued to the proper limit?
+\item[ii.] What is the probability that at least one of the selected bolts is not torqued to the proper limit?
+\end{itemize}
+\end{q}
+
+Consider a steel plate \(\mathcal{S}\), which harbors a finite set of bolts. Within this collection, there are two disjoint subsets: the set of properly torqued bolts, \(T\), and the set of bolts not torqued to the proper limit, \(N\). The cardinalities of these sets are ascertained as \(|T| = 11\) and \(|N| = 4\). Consider a selection space \(\Omega\) defined as the set of all 6-bolt combinations from \(\mathcal{S}\). A random variable \(B: \Omega \to \{t, n\}\) indicates the torque status of a bolt, with \(t\) and \(n\) are properly torqued and not properly torqued, respectively. The number of ways of achieving this selection from the subset \(T\) is given by the binomial coefficient: \[ \text{Ways}(T,6) = \binom{11}{6} = \frac{11!}{6! \times 5!} = 462. \] Simultaneously, the universe of all possible 6-bolt selections from \(\mathcal{S}\) is: \[ \text{Ways}(\mathcal{S},6) = \binom{15}{6} = \frac{15!}{6! \times 9!} = 5005. \] Thus, the sought probability, \(P(T_{selection})\): \AnswerTag \[ P(T_{selection}) = \frac{\text{Ways}(T,6)}{\text{Ways}(\mathcal{S},6)} = \frac{462}{5005} = 0.0923. \] The complementary event, where at least one bolt among the sextet lacks the proper torque, can be succinctly captured as: \AnswerTag \[ P(N_{presence}) = 1 - P(T_{selection}) = 1- 0.0923 = 0.9077. \] This deduction emerges from the totality of probabilistic space. Thus the likelihood of all six bolts conforming to the torque standard is \(P(T_{selection}) = 0.0923\). Conversely, the chance of encountering at least one bolt in the selection that defies the torque standard is \(P(N_{presence}) = 0.9077\).
+
+
+\vfill
+\begin{flushright}
+\textbf{ans.} \(P(T_{selection})=0.0923, \quad  P(N_{presence}) = 0.9077.\)
+\end{flushright}
+
+\newpage
+\section*{Question 4}
+\addcontentsline{toc}{section}{Question 4}
+\begin{q}
+Q4) (40p) A construction company employs two sales engineers. Engineer 1 does the work estimating cost for \(30 \%\) of jobs bid by the company. Engineer 2 does the work for \(70 \%\) of jobs bid by company. It is known that the error rate for engineer 1 is such that 0.04 is the probability of an error when he does the work, whereas the probability of an error in the work of engineer 2 is 0.02 . Suppose a bid arrives and a serious error occurs in estimating cost. Which engineer would you guess did the work? Explain and show all work.
+\end{q}
+
+Let the events \( \mathcal{E}_1 \) and \( \mathcal{E}_2 \) symbolize the domains wherein Engineers 1 and 2 operate, respectively. Let \( \mathcal{A} \) be the event space corresponding to the manifestation of a grievous error. I am assuming that
+
+\begin{itemize}
+\item[a.] The only source of error for any job is attributed to the engineer estimating the cost.
+\item[b.] Each engineer's error rate remains constant across all jobs they handle.
+\item[c.] The error rates of the two engineers are independent of each other.
+\item[d.] The provided probabilities accurately reflect the real-world error rates and work distribution between the two engineers.
+\end{itemize}
+
+It is given
+
+\[
+P(\mathcal{E}_1) = 0.30, \quad P(\mathcal{E}_2) = 0.70,
+\]
+\[
+P(\mathcal{A}|\mathcal{E}_1) = 0.04, \quad P(\mathcal{A}|\mathcal{E}_2) = 0.02.
+\]
+
+With Bayes' theorem, we derive the posterior probability:
+\[
+P(\mathcal{E}_1|\mathcal{A}) = \frac{P(\mathcal{A} \cap \mathcal{E}_1)}{P(\mathcal{A})}, \quad \text{if } P(\mathcal{A}) \neq 0.
+\]
+
+The term \( P(\mathcal{A} \cap \mathcal{E}_1) \) represents the joint event where both an error arises and Engineer 1 is its origin. Expanding this, we have:
+\[
+P(\mathcal{A} \cap \mathcal{E}_1) = P(\mathcal{A}|\mathcal{E}_1) \times P(\mathcal{E}_1).
+\]
+A parallel expression exists for Engineer 2.
+
+To unveil \( P(\mathcal{A}) \), we use the law of total probability, considering every facet of our defined manifold:
+\[
+P(\mathcal{A}) = \sum_{i=1}^{2} P(\mathcal{A}|\mathcal{E}_i) \times P(\mathcal{E}_i).
+\]
+Put our known quantities:
+\[
+P(\mathcal{A}) = 0.04 \times 0.30 + 0.02 \times 0.70 = 0.026.
+\]
+Equipped with this, the posterior probabilities are: \AnswerTag
+
+\[
+P(\mathcal{E}_1|\mathcal{A}) = \frac{0.04 \times 0.30}{0.026} \approx 0.4615,
+\]
+\[
+P(\mathcal{E}_2|\mathcal{A}) = \frac{0.02 \times 0.70}{0.026} \approx 0.5385.
+\]
+
+Engineer 2, despite its particular sensitivity, is slightly more likely to be the source of the observed defect, mainly due to the volume of tasks under its jurisdiction. Therefore, Engineer 2 emerges as the probable originator of the defective work.
+
+
+\vfill
+\begin{flushright}
+\textbf{ans.} \(\therefore \mathcal{E}_2 \quad \big| \quad \because \left( P(\mathcal{E}_2|\mathcal{A}) = 0.5385 \right) \land \left( P(\mathcal{E}_2|\mathcal{A}) > P(\mathcal{E}_1|\mathcal{A}) \right).\)
+\end{flushright}
+
+\end{document}

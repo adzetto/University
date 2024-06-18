@@ -1,0 +1,166 @@
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper, left=2.4cm, right=2.4cm, top=2cm, bottom=2cm, nomarginpar]{geometry}
+\usepackage{amsmath, algorithm, pgfplots, pgf, pdfpages, amsfonts, amssymb, stmaryrd, enumitem,graphicx, algpseudocode, setspace, listings, courier, color, caption, centernot, hyperref, lstautogobble, zi4, mathtools, lmodern, colortbl, array, multicol, fancyhdr, lastpage, svg}
+\usepackage{booktabs}
+\hypersetup{
+    pdftitle={CE204_FP1_G6},
+    pdftoolbar=true,        % show Acrobat’s toolbar?
+    pdfmenubar=true,        % show Acrobat’s menu?
+    pdfauthor={Muhammet Yağcıoğlu},
+    pdfsubject={CE204_FP_RPs},
+    pdfcreator={Muhammet Yağcıoğlu},   % creator of the document
+    pdfproducer={Muhammet Yağcıoğlu}, % producer of the document
+    colorlinks,
+    linkcolor={black},
+    citecolor={black},
+    urlcolor={blue!80!black}
+}
+\usepackage[noblocks]{authblk}
+\usepackage[version=4]{mhchem}
+\usepackage[export]{adjustbox}
+\usepackage{eso-pic} % Required for absolute positioning
+\graphicspath{ {./images/} }
+\usetikzlibrary{patterns}
+\usepackage{tikz-3dplot}
+\usepackage[version=4]{mhchem}
+\usepackage[export]{adjustbox}
+\usepgfplotslibrary{groupplots}
+\usepackage{xcolor}
+\usepackage[absolute,overlay]{textpos}
+\usepackage{ragged2e}
+\usepackage{xcolor}
+\usepackage{amsthm}
+\usepackage{tikz}
+
+
+
+
+%----------compiler settings---------
+\setlength{\parindent}{0pt}
+\everymath{\displaystyle}
+\onehalfspacing
+
+%-----------colors----------
+\pgfplotsset{compat=1.18}
+\definecolor{bluekeywords}{rgb}{0.13, 0.13, 1}
+\definecolor{greencomments}{rgb}{0, 0.5, 0}
+\definecolor{redstrings}{rgb}{0.9, 0, 0}
+\definecolor{graynumbers}{rgb}{0.5, 0.5, 0.5}
+\definecolor{bronze}{rgb}{0.82, 0.41, 0.12}
+\definecolor{crimson}{rgb}{0.86, 0.08, 0.24}
+\definecolor{brown(web)}{rgb}{0.65, 0.16, 0.16}
+\definecolor{darkspringgreen}{rgb}{0.16, 0.32, 0.75}
+\definecolor{blue(ncs)}{rgb}{0.0, 0.53, 0.74}
+\definecolor{amber}{rgb}{1.0, 0.49, 0.0}
+\definecolor{cadmiumgreen}{rgb}{0.0, 0.42, 0.24}
+
+
+
+
+%-------code frame-----------
+\lstset{
+    autogobble,
+    columns=fullflexible,
+    showspaces=false,
+    showtabs=false,
+    breaklines=true,
+    showstringspaces=false,
+    breakatwhitespace=true,
+    escapeinside={(*@}{@*)},
+    commentstyle=\color{greencomments},
+    keywordstyle=\color{bluekeywords},
+    stringstyle=\color{redstrings},
+    numberstyle=\color{graynumbers},
+    basicstyle=\ttfamily\footnotesize,
+    frame=l,
+    framesep=12pt,
+    xleftmargin=12pt,
+    tabsize=4,
+    captionpos=b
+}
+
+
+
+\lstdefinelanguage{myMMA}{
+keywords={SetDirectory, NotebookDirectory, Exp, IdentityMatrix, Eigenvalues, 
+ListPlot, PlotRange, PlotStyle, Directive, PointSize, AspectRatio, Blue, Graphics, Line, 
+Manipulate, Show, Sqrt, UniformDistribution, GammaDistribution, BetaDistribution, 
+Nintegrate, For, DataRange, AxesLabel, PlotLabel, Transpose, Export, Plot, Append, Infinity},
+keywordstyle=\color{black},
+commentstyle=\color{gray}, 
+identifierstyle=\color{blue},
+sensitive=false,
+comment=[l]{(*},
+morecomment=[s]{/*}{*/},
+morestring=[b]',
+morestring=[b]"
+}
+
+
+
+
+
+
+%-----gauss declare---------
+\pgfmathdeclarefunction{gauss}{2}{%
+  \pgfmathparse{1/(#2*sqrt(2*pi)) * exp(-((x-#1)^2)/(2*#2^2))}%
+}
+\usetikzlibrary{arrows.meta, decorations.markings}
+\pgfplotsset{compat=1.17}
+
+
+
+
+
+
+
+%--------------page numbering------------
+\fancyfoot[R]{page \thepage\ of \textcolor{bronze}{\pageref{LastPage}}}
+\fancyhead[R]{Group 6}
+
+
+
+%-------------qframe settings---------------
+
+\usepackage[framemethod=TikZ]{mdframed}
+\newmdenv[%
+    skipabove=1em, % space above the frame
+    skipbelow=1em, % space below the frame
+    linewidth=1pt, % width of the frame lines
+    linecolor=gray!80, % color of the frame lines
+    backgroundcolor=gray!9, % background color inside the frame
+    roundcorner=5pt, % radius of the rounded corners
+    innerleftmargin=1em, % margin within the frame at the left
+    innerrightmargin=1em, % margin within the frame at the right
+    innertopmargin=0.5em, % margin within the frame at the top
+    innerbottommargin=0.5em % margin within the frame at the bottom
+]{qframe}
+
+\newenvironment{q}
+{
+    \begin{qframe}
+    \noindent\textit{\textbf{Problem Statement:}}
+    \par\smallskip
+}
+{
+    \end{qframe}
+}
+
+
+
+
+
+%-------------ANSWER TAG---------------
+\newcommand{\AnswerTag}{\hfill \begin{tikzpicture} \fill[black] (0.35cm,0) -- (0,0.175cm) -- (0.35cm,0.35cm) -- cycle;\end{tikzpicture}}
+
+
+
+%-------Theorem and another question frames----------
+\newenvironment{theorem}{\begin{mdframed}\textbf{Theorem.}}{\end{mdframed}}
+
+%usage: \begin{theorem}
+
+\newenvironment{question}{\begin{mdframed}\textbf{Question.}}{\end{mdframed}}
+
+%usage: %usage: \begin{question}

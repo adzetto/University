@@ -1,0 +1,427 @@
+\documentclass[12pt]{report}
+\input{confugiration.tex}
+\fancyhead[L]{CE204 Engineering Surveying - Report of Field Practice 4}
+\author{Muhammet Yağcıoğlu - 290204042}
+\usepackage{hyperref} 
+\begin{document}
+\onecolumn
+\thispagestyle{empty}
+\begin{center}
+
+
+\textbf{\fontsize{14}{\baselineskip}\selectfont İzmir Institute of Technology}
+
+
+\textbf{\fontsize{14}{\baselineskip}\selectfont In collaboration with}
+
+
+\textbf{\fontsize{14}{\baselineskip}\selectfont Department of Civil Engineering}
+
+\bigskip
+
+\includesvg[width=5cm]{Picture1.svg}
+
+\bigskip
+
+\textbf{\fontsize{15}{\baselineskip}\selectfont CE204 – ENGINEERING
+SURVEYING}
+
+\bigskip
+
+\textbf{\fontsize{16}{\baselineskip}\selectfont 2023-2024 SPRING}
+
+
+
+
+
+
+
+\textit{\textbf{\fontsize{14}{\baselineskip}\selectfont Field Practice – 4}}
+
+
+
+
+
+
+\textbf{\fontsize{14}{\baselineskip}\selectfont Lecturer: Assoc. Prof. Volkan Emre UZ }
+
+\bigskip
+
+\textbf{\fontsize{14}{\baselineskip}\selectfont Group 6}
+
+\bigskip
+
+\textbf{\fontsize{14}{\baselineskip}\selectfont Team Leader: Melih Berke	KARAADAM}
+
+\bigskip
+
+Melih Berke	KARAADAM\\
+Mert BAY\\
+Mert BOSTANCI \\
+Mevlüt Yağız KÜL\\
+Muhammet YAĞCIOĞLU\\
+Muhammet Taylan ARSLAN\\
+Uğur Can YEŞİL \\
+Umut Konuk\\
+
+
+
+\bigskip
+
+\bigskip
+
+\bigskip
+
+{\today}
+\end{center}
+
+\clearpage
+
+
+
+\newpage
+\thispagestyle{fancy}
+\pagestyle{fancy}
+\begin{abstract}
+During the field practice, the main goal was to level benchmarks along a predetermined path for a control survey, determine the closure error, and then change elevations as needed. To guarantee accuracy in elevation measurements, the procedure included preparation, data collecting using levelling tools, and data processing. After that, we looked at the data to see if the levelling procedure was accurate and consistent; we paid special attention to the estimated closure error, which was within the permissible range according to engineering standards.
+\end{abstract}
+\tableofcontents
+%\listoffigures
+\listoftables
+\lstlistoflistings
+
+\newpage
+
+
+\section*{Introduction}
+\addcontentsline{toc}{section}{Introduction}
+
+Using benchmark levelling, conduct a control survey, and compute the closure error with an elevation adjustment across a specified course; these are the objectives of this project. In this drill, you will learn how to use levelling tools accurately, which is essential for building and land surveying operations.
+
+The level run's principal beginning point was the 100-meter-high benchmark (\(\text{BM}\)). Point L1 and terminus G5, two of the many control and turning locations on our flat circuit, need precise elevation determination. Building a level loop with the benchmark as its beginning and ending point was an essential part of this project. This allowed us to calculate the closure error, an important part of levelling work that involves comparing the start and finish elevations to guarantee the loop was accurate.
+
+\section*{Procedure}
+\addcontentsline{toc}{section}{Procedure}
+
+\textit{Preparation and Setup.}
+
+Before heading to the field, the project team reviewed the provided coordinates and map to plan the level circuit efficiently. The equipment used included a leveling instrument and a stadia rod, which were calibrated and tested before commencement of the work.
+
+\textit{Field Work.}
+At a known beginning height of 100 metres, the level run began at the benchmark (BM). The group continued on to the first turning point (TP1), where they measured the elevation differences using stadio rods at each stop. The fore sight (FS) and rear sight (BS) staff readings were combined at each turning point, with the centre staff reading being used for computations to enhance accuracy. Among the several checkpoints along the way, L1 served as a control point where an important reading was required on both the approach and departure phases of the trip. When we got to the last point (G5), we measured all the intermediate spots again to complete the circle and go back to the benchmark.
+
+\textit{Data Analysis.}
+Station names, rear sight (BS), intermediate sight (IS), fore sight (FS), middle staff readings and computed rises and falls were entered into a spreadsheet containing the field data. Using the difference between successive readings from the middle staff, the rises and falls were determined. Starting from the benchmark and working our way through all the turning locations, we then calculated the consequent heights in a progressive manner. The collected rises and falls were used to fine-tune each point's elevation, and great effort was taken to guarantee that the computations were precise and constant.
+
+\textit{Closure Error Calculation.}
+The closure error in millimetres was determined by comparing the end height with the original benchmark elevation after the level loop was completed. In order to check the accuracy of the levelling process, this mistake measures the difference between the beginning and finishing elevations. Next, the closure error was compared to the permitted error, which was determined by adding up all the lengths of the survey loop (\(S_{km}\)), in order to verify whether the measurements were appropriate according to engineering standards.
+
+\section*{Data Analysis}
+\addcontentsline{toc}{section}{Data Analysis}
+
+
+The beginning benchmark point, \( BM \), is known to be 100 metres above sea level. The tops of the points \( L1 \) and \( G5 \) must be found. Along with a number of other turning points, these coordinates create a level loop that, when we used to calculate closure error, ensures that the measurements are consistent.
+
+The middle staff reading at each station \( i \) is denoted by \( M_i \). The formula for calculating the rise between two successive stations, where \( i+1 \) denotes a forward station, is:
+
+\[
+\text{Rise}_{i} = M_{i+1} - M_i \quad \text{if } M_{i+1} > M_i
+\]
+Conversely,
+\[
+\text{Fall}_{i} = M_i - M_{i+1} \quad \text{if } M_i > M_{i+1}
+\]
+
+The relative level \( R.L \) at each station is computed recursively starting from \( BM \) with \( R.L_{\text{BM}} = 100 \) meters. For subsequent stations:
+\[
+R.L_{i+1} = R.L_i + \text{Rise}_i - \text{Fall}_i
+\]
+
+After the survey route is finished, the absolute difference between the starting and final elevations is used to compute the closure error in metres:
+\[
+\text{Closure Error (m)} = |R.L_{\text{final}} - R.L_{\text{initial}}|
+\]
+This is converted into millimeters for a detailed error assessment:
+\[
+\text{Closure Error (mm)} = \text{Closure Error (m)} \times 1000
+\]
+
+The overall distance \( S \) in kilometres measured by the survey is determined by adding up the distances between each pair of stations along the route, designated as \( E \), and is computed by adding up all the individual leg distances.
+\[
+S_{\text{km}} = \sum E_i / 1000
+\]
+
+The maximum permitted error is determined as the sum of the survey loop lengths \(S_{\text{km}} \), in accordance with the requirements for survey accuracy.
+
+\[
+E_{\max} = 12 \times \sqrt{S_{\text{km}}} \quad \text{in mm}
+\]
+
+The study's acceptability is assessed by comparing the computed closure error to \( E_{\max} \). The measurements may not be precise enough and more research or a new survey would be needed to find and fix any mistakes if the computed closure error is greater than \( E_{\max} \).
+
+\begin{longtable}{lcccc}
+\caption{Field Readings} \label{tab:mylongtable} \\ % Add a caption if needed
+
+\toprule
+Station & Top (cm) & Middle (cm) & Bottom (cm) & Distance (m) \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+
+BM-M & 149.500 & 133.800 & 117.700 & 30.000 \\
+M-TP1 & 158.000 & 142.600 & 127.000 & 30.000 \\
+TP1-M & 174.600 & 146.400 & 146.500 & 30.000 \\
+M-TP2 & 135.400 & 119.800 & 104.300 & 30.000 \\
+TP2-M & 199.600 & 185.000 & 170.400 & 30.000 \\
+M-TP3 & 149.800 & 134.800 & 119.700 & 30.000 \\
+TP3-M & 197.000 & 181.100 & 165.300 & 30.000 \\
+M-TP4 & 147.500 & 132.600 & 117.500 & 30.000 \\
+TP4-M & 196.600 & 181.000 & 165.600 & 30.000 \\
+\textcolor{red}{M-L1} & 151.100 & 141.400 & 131.600 & 30.000 \\
+L1-M & 183.600 & 167.000 & 151.500 & 30.000 \\
+M-TP5 & 189.400 & 173.000 & 156.600 & 30.000 \\
+TP5-M & 149.400 & 133.600 & 117.600 & 30.000 \\
+M-TP6 & 368.800 & 351.900 & 335.800 & 30.000 \\
+TP6-M & 62.650 & 52.000 & 41.000 & 20.750 \\
+M-TP7 & 263.500 & 263.200 & 262.900 & 20.750 \\
+TP7-M & 63.000 & 47.500 & 32.000 & 30.000 \\
+M-TP8 & 245.700 & 245.500 & 245.500 & 30.000 \\
+TP8-M & 132.500 & 132.200 & 131.900 & 16.090 \\
+M-TP9 & 175.500 & 166.800 & 158.100 & 16.090 \\
+TP9-M & 149.500 & 133.500 & 117.400 & 30.000 \\
+M-TP10 & 222.500 & 206.800 & 189.800 & 30.000 \\
+TP10-M & 179.600 & 164.500 & 148.500 & 30.000 \\
+M-TP11 & 194.800 & 178.500 & 163.000 & 30.000 \\
+TP11-M & 162.500 & 146.000 & 129.500 & 30.000 \\
+M-TP12 & 224.100 & 196.800 & 169.400 & 30.000 \\
+TP12-M & 151.300 & 139.100 & 127.000 & 22.500 \\
+M-TP13 & 185.500 & 175.000 & 165.500 & 22.500 \\
+TP13-M & 207.000 & 189.000 & 171.800 & 32.250 \\
+M-TP14 & 36.500 & 20.100 & 4.100 & 32.250 \\
+TP14-M & 292.000 & 276.300 & 261.100 & 30.000 \\
+M-TP15 & 21.000 & 11.000 & 0.000 & 30.000 \\
+TP15-M & 274.000 & 263.100 & 251.600 & 22.500 \\
+M-TP16 & 66.500 & 55.500 & 43.600 & 22.500 \\
+TP16-M & 281.400 & 269.600 & 257.800 & 22.500 \\
+M-G5 & 77.600 & 66.400 & 55.300 & 22.500 \\
+G5-M & 255.400 & 244.700 & 232.400 & 22.500 \\
+M-TP17 & 120.600 & 108.500 & 96.600 & 22.500 \\
+TP17-M & 229.500 & 213.100 & 196.900 & 31.500 \\
+M-TP18 & 177.600 & 161.500 & 146.000 & 31.500 \\
+TP18-M & 137.500 & 122.400 & 107.300 & 31.500 \\
+M-TP19 & 243.400 & 227.900 & 212.100 & 31.500 \\
+TP19-M & 91.300 & 77.000 & 62.200 & 31.500 \\
+M-TP20 & 308.000 & 292.200 & 276.600 & 31.500 \\
+TP20-M & 138.400 & 127.100 & 115.700 & 22.500 \\
+\textcolor{red}{M-BM} & 179.600 & 167.300 & 155.600 & 22.500 \\
+\bottomrule
+\end{longtable}
+
+
+\newpage
+\section*{Results}
+\addcontentsline{toc}{section}{Results}
+
+
+\begin{longtable}{lcccc}
+\caption{Field Readings Results} \label{tab:mylongtable} \\ % Add a caption if needed
+
+\toprule
+Station & RISE & FALL & R.L \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+BM-M & 0.000 & 0.000 & 100.000 \\
+M-TP1 & 0.088 & 0.000 & 100.088 \\
+TP1-M & 0.000 & -0.038 & 100.126 \\
+M-TP2 & -0.266 & 0.000 & 99.860 \\
+TP2-M & 0.000 & -0.652 & 100.512 \\
+M-TP3 & -0.502 & 0.000 & 100.010 \\
+TP3-M & 0.000 & -0.463 & 100.473 \\
+M-TP4 & -0.485 & 0.000 & 99.988 \\
+TP4-M & 0.000 & -0.484 & 100.472 \\
+\textcolor{red}{M-L1} & -0.396 & 0.000 & \textcolor{red}{100.076} \\
+L1-M & 0.000 & -0.256 & 100.332 \\
+M-TP5 & 0.060 & 0.000 & 100.392 \\
+TP5-M & 0.000 & 0.394 & 99.998 \\
+M-TP6 & 2.183 & 0.000 & 102.181 \\
+TP6-M & 0.000 & 2.999 & 99.182 \\
+M-TP7 & 2.112 & 0.000 & 101.294 \\
+TP7-M & 0.000 & 2.157 & 99.137 \\
+M-TP8 & 1.980 & 0.000 & 101.117 \\
+TP8-M & 0.000 & 1.133 & 99.984 \\
+M-TP9 & 0.346 & 0.000 & 100.330 \\
+TP9-M & 0.000 & 0.333 & 99.997 \\
+M-TP10 & 0.733 & 0.000 & 100.730 \\
+TP10-M & 0.000 & 0.423 & 100.307 \\
+M-TP11 & 0.140 & 0.000 & 100.447 \\
+TP11-M & 0.000 & 0.325 & 100.122 \\
+M-TP12 & 0.508 & 0.000 & 100.630 \\
+TP12-M & 0.000 & 0.577 & 100.053 \\
+M-TP13 & 0.359 & 0.000 & 100.412 \\
+TP13-M & 0.000 & -0.140 & 100.552 \\
+M-TP14 & -1.689 & 0.000 & 98.863 \\
+TP14-M & 0.000 & -2.562 & 101.425 \\
+M-TP15 & -2.653 & 0.000 & 98.772 \\
+TP15-M & 0.000 & -2.521 & 101.293 \\
+M-TP16 & -2.076 & 0.000 & 99.217 \\
+TP16-M & 0.000 & -2.141 & 101.358 \\
+\textcolor{red}{M-G5} & -2.032 & 0.000 & \textcolor{red}{99.326} \\
+G5-M & 0.000 & -1.783 & 101.109 \\
+M-TP17 & -1.362 & 0.000 & 99.747 \\
+TP17-M & 0.000 & -1.046 & 100.793 \\
+M-TP18 & -0.516 & 0.000 & 100.277 \\
+TP18-M & 0.000 & 0.391 & 99.886 \\
+M-TP19 & 1.055 & 0.000 & 100.941 \\
+TP19-M & 0.000 & 1.509 & 99.432 \\
+M-TP20 & 2.152 & 0.000 & 101.584 \\
+TP20-M & 0.000 & 1.651 & 99.933 \\
+\textcolor{red}{M-BM} & 0.402 & 0.000 & \textcolor{red}{100.335} \\
+\bottomrule
+\end{longtable}
+
+If we focus on the desired part of the code output:
+
+\begin{outputeofcode}
+...
+
+45    M-BM  0.402  0.000  100.335
+
+Closure Error = 335.00 mm
+
+Allowable Error = 13534.91 mm
+
+   Station  Top Reading  Middle Reading  ...   RISE   FALL      R.L
+0     BM-M       149.50           133.8  ...  0.000  0.000  100.000
+1    M-TP1       158.00           142.6  ...  0.088  0.000  100.088
+...
+\end{outputeofcode}
+
+\section*{Discussion}
+\addcontentsline{toc}{section}{Discussion}
+
+The endpoint elevations calculated were:
+\begin{itemize}
+\item[-] \( h_{L1} = 100.076 \, \text{m} \),
+\item[-] \( h_{G5} = 99.326 \, \text{m} \),
+\item[-] \( h_{BM_{\text{end}}} = 100.335 \, \text{m} \).
+\end{itemize}
+
+The closure error for this survey loop is computed as:
+\[
+\text{Closure Error} = |h_{BM_{\text{end}}} - h_{BM_{\text{start}}}| = |100.335 \, \text{m} - 100.000 \, \text{m}| = 0.335 \, \text{m} \text{ or } 335 \, \text{mm},
+\]
+showing a large discrepancy from the anticipated zero if the measurements were flawless.
+
+The total survey distance \( S \) is expressed in kilometers, and the allowable error \( E_{\max} \) is defined as:
+\[
+E_{\max} = 12 \sqrt{S} \, \text{(in mm)}.
+\]
+For the given \( S \), the allowable error was calculated to be \( 13534.91 \, \text{mm} \).
+
+
+
+\section*{Conclusion}
+\addcontentsline{toc}{section}{Conclusion}
+
+It is comfortably within the permissible error margin of 13534.91 mm, even if the closure error is much more than the required accuracy (335 mm vs. an anticipated near-zero mm in a flawless survey). This difference is within the acceptable range for engineering purposes, but it does suggest that there may be some underlying systematic mistakes or external influences impacting the precision of the measurements. 
+
+The research primarily concludes that, while the closure error is apparent, it is still within the allowed range according to technical standards. In order to improve the data dependability for civil engineering applications, future surveys should aim to minimise this error by using more accurate equipment, doing calibration checks more often, or adjusting survey methods to achieve a tighter closure.  
+
+\newpage
+\section*{Appendix}
+\addcontentsline{toc}{section}{Appendix}
+
+\begin{lstlisting}[caption={Code for Calculations}]
+import pandas as pd
+import numpy as np
+
+file_path = 'survey_datas.xlsx'
+data = pd.read_excel(file_path, usecols='A:E', skiprows=0)
+
+initial_elevation = 100.0
+
+data['Middle Staff Reading'] = data['Middle Reading']/100
+
+data['RISE'] = 0
+data['FALL'] = 0
+data['R.L'] = np.nan
+data.at[0, 'R.L'] = initial_elevation
+
+for i in range(1, len(data)):
+    prev_rl = data.loc[i-1, 'R.L']
+    if i % 2 == 1:
+        data.loc[i, 'RISE'] = data.loc[i, 'Middle Staff Reading'] - data.loc[i-1, 'Middle Staff Reading']
+        data.loc[i, 'R.L'] = prev_rl + data.loc[i, 'RISE']
+    else:
+        data.loc[i, 'FALL'] = data.loc[i-1, 'Middle Staff Reading'] - data.loc[i, 'Middle Staff Reading']
+        data.loc[i, 'R.L'] = prev_rl - data.loc[i, 'FALL']
+
+closure_error_m = abs(data.at[len(data)-1, 'R.L'] - initial_elevation)
+
+closure_error_mm = closure_error_m * 1000
+
+S_km = data['E'].sum() / 1000
+print(S_km)
+E_max = 12 * np.sqrt(S_km)
+
+result_table = data[['Station', 'RISE', 'FALL', 'R.L']]
+print("Survey Summary:")
+print(result_table)
+
+print(f"Closure Error = {closure_error_mm:.2f} mm")
+print(f"Allowable Error = {E_max * 1000:.2f} mm")
+
+result_table.to_excel('survey_results.xlsx', index=False)
+
+\end{lstlisting}
+
+\begin{lstlisting}[caption={Code for Errors and LaTeX}]
+import pandas as pd
+import numpy as np
+
+file_path = 'survey_datas.xlsx'
+data = pd.read_excel(file_path, usecols='A:E', skiprows=0)
+def to_latex_enhanced(df):
+    latex_str = df.to_latex(index=False, float_format="{:0.3f}".format, column_format='lcccc', escape=False)
+    return latex_str
+
+latex_table = to_latex_enhanced(data)
+print(latex_table)
+initial_elevation = 100.0
+
+data['Middle Staff Reading'] = data['Middle Reading']/100
+
+data['RISE'] = 0
+data['FALL'] = 0
+data['R.L'] = np.nan
+data.at[0, 'R.L'] = initial_elevation
+
+for i in range(1, len(data)):
+    prev_rl = data.loc[i-1, 'R.L']
+    if i % 2 == 1:
+        data.loc[i, 'RISE'] = data.loc[i, 'Middle Staff Reading'] - data.loc[i-1, 'Middle Staff Reading']
+        data.loc[i, 'R.L'] = prev_rl + data.loc[i, 'RISE']
+    else:
+        data.loc[i, 'FALL'] = data.loc[i-1, 'Middle Staff Reading'] - data.loc[i, 'Middle Staff Reading']
+        data.loc[i, 'R.L'] = prev_rl - data.loc[i, 'FALL']
+
+closure_error_m = abs(data.at[len(data)-1, 'R.L'] - initial_elevation)
+closure_error_mm = closure_error_m * 1000
+S_km = data['E'].sum() / 1000
+print(S_km)
+E_max = 12 * np.sqrt(S_km)
+result_table = data[['Station', 'RISE', 'FALL', 'R.L']]
+print("Survey Summary:")
+print(result_table)
+print(f"Closure Error = {closure_error_mm:.2f} mm")
+print(f"Allowable Error = {E_max * 1000:.2f} mm")
+print(data)
+result_table_latex_table = to_latex_enhanced(result_table)
+print(result_table_latex_table)
+result_table.to_excel('survey_results.xlsx', index=False)
+
+\end{lstlisting}
+\end{document}

@@ -1,0 +1,167 @@
+\documentclass[12pt]{article}
+\input{confugiration.tex}
+\fancyhead[L]{CE 224 Mechanics of Materials, Fall 2023, Homework-5 }
+\title{\vspace{-1cm}CE 224 - HW5}
+\author{Muhammet Yağcıoğlu - 290204042}
+\usepackage{hyperref} 
+\begin{document}
+\maketitle\thispagestyle{fancy}
+\pagestyle{fancy}
+\tableofcontents
+\newpage
+
+
+
+\section*{Question 1}
+\addcontentsline{toc}{section}{Question 1}
+\begin{q}
+A gondola on a ski lift is supported by two bent arms, as shown in the figure. Each arm is offset by the distance \(b=180 \mathrm{~mm}\) from the line of action of the weight force \(W\). The allowable stresses in the arms are \(100 \mathrm{MPa}\) in tension and \(50 \mathrm{MPa}\) in shear.
+
+If the loaded gondola weighs \(12 \mathrm{kN}\), what is the minimum diameter \(d\) of the arms?
+\end{q}
+
+\begin{figure}[!ht]
+    \centering
+    \resizebox{0.7\textwidth}{!}{\includegraphics{Screenshot 2023-12-27 205128.png}}
+    \caption{}
+    \label{fig:enter-label}
+\end{figure}
+
+
+Let \(b\) be the offset distance of each arm, \(b = 180 \mathrm{~mm}\), and \(W\) the weight of the loaded gondola, \(W = 12 \mathrm{kN}\). The allowable tensile and shear stresses are denoted by \(\sigma_{\text{allow}} = 100 \mathrm{MPa}\) and \(\tau_{\text{allow}} = 50 \mathrm{MPa}\), respectively. Define \(d_{\text{min}}\) as the minimum diameter of the arms. Also note that \(\tau_{\max }=\frac{\sigma_t}{2}\). The cross-sectional area \(A\) and section modulus \(S\) are expressed as \(A = \frac{\pi d^2}{4}\) and \(S = \frac{\pi d^3}{32}\), respectively. For the determination of maximum tensile stress, employ: \[ \sigma_t = \frac{W}{A} + \frac{M}{S} = \frac{4W}{\pi d^2} + \frac{32Wb}{\pi d^3} \] or \[ \left(\frac{\pi \sigma_t}{4W}\right) d^3 - d - 8b = 0 \] Substituting numerical values: \[ \frac{\pi \sigma_t}{4W} = \frac{\pi \sigma_{\text{allow}}}{4W} = \frac{\pi \times 100 \mathrm{Mpa}}{4 \times 6 \mathrm{kN}} = 13,089.97 \frac{1}{\mathrm{~m}^2} \] and \(8b = 1.44 \mathrm{~m}\), the cubic equation becomes: \[ 13,090 d^3 - d - 1.44 = 0 \quad (d \text{ in meters}) \] Let \(c_1=13090\) and \(c_2=1.44\) for simplicity. Solve for \(d\) : \[c_1 d^3-d-c_2=0\] Divide both sides by \(c_1\) : \[ d^3-\frac{d}{c_1}-\frac{c_2}{c_1}=0 \] Change coordinates by substituting \(d=x+\frac{\lambda}{x}\), where \(\lambda\) is a constant value that will be determined later: \[ \left(x+\frac{\lambda}{x}\right)^3-\frac{x+\frac{\lambda}{x}}{c_1}-\frac{c_2}{c_1}=0 \] Multiply both sides by \(x^3\) and collect in terms of \(x\) : \[ x^6+x^4\left(3 \lambda-\frac{1}{c_1}\right)-\frac{x^3 c_2}{c_1}+x^2\left(3 \lambda^2-\frac{\lambda}{c_1}\right)+\lambda^3=0 \] Substitute \(\lambda=\frac{1}{3 c_1}\) and then \(y=x^3\), yielding a quadratic equation in the variable \(y\) : \[ y^2+\frac{1}{27 c_1^3}-\frac{y c_2}{c_1}=0 \] Find the positive solution to the quadratic equation: \[ y=\frac{9 c_2+\sqrt{3} c_1 \sqrt{\frac{27 c_1 c_2^2-4}{c_1^3}}}{18 c_1} \] Substitute back for \(y=x^3\) : \[ x^3=\frac{9 c_2+\sqrt{3} c_1 \sqrt{\frac{27 c_1 c_2^2-4}{c_1^3}}}{18 c_1} \] Taking cube roots gives \(\frac{\sqrt[3]{\frac{9 c_2+\sqrt{3} c_1 \sqrt{\frac{27 c_1 c_2^2-4}{c_1^3}}}{c_1}}}{\sqrt[3]{2} 3^{2 / \beta}}\) times the third roots of unity: \[x=\frac{\sqrt[3]{\frac{9 c_2+\sqrt{3} c_1 \sqrt{\frac{27 c_1 c_2^2-4}{c_1^3}}}{c_1}}}{\sqrt[3]{2} 3^{2 / 3}} \quad \text{or} \quad x=-\frac{\sqrt[3]{-\frac{1}{2}} \sqrt[3]{\frac{9 c_2+\sqrt{3} c_1 \sqrt{\frac{27 c_1 c_2^2-4}{c_1^3}}}{c_1}}}{3^{2 / 3}} \quad \text{or} \quad x=\frac{(-1)^{2 / 3} \sqrt[3]{\frac{9 c_2+\sqrt{3} c_1 \sqrt{\frac{27 c_1 c_2^2-4}{c_1^3}}}{c_1}}}{\sqrt[3]{2} 3^{2 / 3}}\] Substitute each value of \(x\) into \(d=x+\frac{1}{3 x c_1}\) and taking into real valued-d : \[d=\frac{\sqrt[3]{\frac{2}{3}}}{c_1 \sqrt[3]{\frac{9 c_2+\sqrt{3} c_1 \sqrt{\frac{27 c_1 c_2^2-4}{c_1^3}}}{c_1}}}+\frac{\sqrt[3]{\frac{9 c_2+\sqrt{3} c_1 \sqrt{\frac{27 c_1 c_2^2-4}{c_1^3}}}{c_1}}}{\sqrt[3]{2} 3^{2 / 3}}=\frac{\sqrt[3]{2} c_1\left(\frac{9 c_2}{c_1}+\sqrt{3} \sqrt{\frac{27 c_1 c_2^2-4}{c_1^3}}\right)^{2 / 3}+2 \sqrt[3]{3}}{6^{2 / 3} \sqrt[3]{\frac{9 c_2}{c_1}+\sqrt{3} \sqrt{\frac{27 c_1 c_2^2-4}{c_1^3}}} c_1}\] put back the constants \(c_1=13090\) and \(c_2=1.44\): \[d = \frac{2^{1/3} \cdot 13090 \left(\frac{9 \cdot 1.44}{13090} + \sqrt{3} \sqrt{\frac{27 \cdot 13090 \cdot (1.44)^2 - 4}{(13090)^3}}\right)^{2/3} + 2 \cdot 3^{1/3}}{6^{2/3} \sqrt[3]{\frac{9 \cdot 1.44}{13090} + \sqrt{3} \sqrt{\frac{27 \cdot 13090 \cdot (1.44)^2 - 4}{(13090)^3}}} \cdot 13090} \approx 0.0484467 \,\mathrm{~m}\] Hence \(d_{\text{min}} = 48.4 \mathrm{~mm}\).
+
+\AnswerTag
+
+\vfill
+\begin{flushright}
+\textbf{ans.} \(d_{\text{min}} = 48.4 \mathrm{~mm}\)
+\end{flushright}
+
+\newpage
+\section*{Question 2}
+\addcontentsline{toc}{section}{Question 2}
+\begin{q}
+2. The 20-kg drum is suspended from the hook mounted on the wooden frame. Determine the state of stress at point \(F\) on the cross section of the frame at section \(b-b\). Indicate the results on an element.
+\end{q}
+
+\begin{figure}[!ht]
+    \centering
+    \resizebox{0.4\textwidth}{!}{\includegraphics{Screenshot 2023-12-27 215441.png}}
+    \caption{}
+    \label{fig:enter-label}
+\end{figure}
+
+Let \(\Sigma\) represent the state of stress at point \(F\) on the cross-section of the wooden frame at section \(b-b\). The analysis begins with the determination of support reactions using equilibrium principles, referencing the free-body diagram of the entire frame:
+
+\begin{figure}[!ht]
+    \centering
+    \includesvg[width=0.5\textwidth]{a2.svg}
+    \caption{}
+\end{figure}
+
+The sum of the moments about point \(A\), denoted by \(\CircArrowLeft{+} \Sigma M_A = 0\), yields:
+
+\[
+F_{BD} \sin 30^{\circ}(3) - 20(9.81)(2) = 0 \implies F_{BD} = 261.6 \mathrm{~N}
+\]
+
+Next, considering the vertical equilibrium (\(+\uparrow \Sigma F_y = 0\)), we have:
+
+\[
+A_y - 261.6 \cos 30^{\circ} - 20(9.81) = 0 \implies A_y = 422.75 \mathrm{~N}
+\]
+
+The horizontal equilibrium (\(\stackrel{+}{\rightarrow} \Sigma F_x = 0\)) equation is:
+
+\[
+A_x - 261.6 \sin 30^{\circ} = 0 \implies A_x = 130.8 \mathrm{~N}
+\]
+
+Next, let us proceed to the analysis of internal loadings, delving into the equilibrium of the lower cut segment, as depicted in Fig. \(4\). At the right-angle corner, we invoke the equilibrium condition in the horizontal direction (\(+\uparrow \Sigma F_x = 0\)) to establish:
+
+\[
+130.8 - V = 0 \implies V = 130.8 \mathrm{~N}
+\]
+
+For the vertical equilibrium (\(+\uparrow \Sigma F_y = 0\)), we ascertain:
+
+\[
+422.75 - N = 0 \implies N = 422.75 \mathrm{~N}
+\]
+
+Additionally, by considering the sum of the moments about point \(K\) (\(\CircArrowLeft{+}\Sigma M_C = 0\)), the following equation emerges:
+
+\[
+130.8(1) - M = 0 \implies M = 130.8 \mathrm{~N \cdot m}
+\]
+
+\begin{figure}[!ht]
+    \centering
+    \includesvg[width=0.5\textwidth]{a3.svg}
+    \caption{}
+\end{figure}
+
+Next, find the section properties, establishing the cross-sectional area \(A\) and moment of inertia \(I\). The cross-sectional area \(A\) is determined by multiplying the given dimensions, yielding:
+
+\[
+A = 0.075 \times 0.075 = 5.625 \times 10^{-3} \, \mathrm{m}^2
+\]
+
+Simultaneously, the moment of inertia \(I\) about the centroidal axis is computed using the standard formula for a rectangular section:
+
+\[
+I = \frac{1}{12} \times 0.075 \times (0.075)^3 = 2.6367 \times 10^{-6} \, \mathrm{m}^4
+\]
+
+Now, turning our attention to Fig. \(5\),
+
+
+\begin{figure}[!ht]
+    \centering
+    \includesvg[width=0.4\textwidth]{a4.svg}
+    \caption{}
+\end{figure}
+
+
+we evaluate the first moment of the area \(Q_F\) with respect to the neutral axis, employing the expression:
+
+\[
+Q_F = \bar{y}^{\prime} A^{\prime} = 0.025 \times 0.025 \times 0.075 = 46.875 \times 10^{-6} \, \mathrm{m}^3
+\]
+
+\textit{Normal stresses.} We commence with the foundational stress expression that captures the amalgamation of axial and bending stresses:
+
+\[
+\sigma = \frac{N}{A} \pm \frac{M y}{I}
+\]
+
+In our case, we focus on point \(F\) with a specific \(y\) value of \(0.0375 - 0.025 = 0.0125 \, \mathrm{m}\). The subsequent computation of the normal stress \(\sigma_F\) entails a series of precise steps:
+
+\[ \begin{aligned}
+\sigma_F & = \frac{-422.75}{5.625 \times 10^{-3}} - \frac{130.8 \times 0.0125}{2.6367 \times 10^{-6}} \\
+& = -695.24 \, \mathrm{kPa} = 695 \, \mathrm{kPa} \, (\mathrm{Compression})
+\end{aligned} \]
+\AnswerTag
+
+This outcome unveils the normal stress at point \(F\), with the negative sign indicating a compressive stress. The magnitude, \(695 \, \mathrm{kPa}\), means a quantitative measure of the stress magnitude, offering a mechanical behavior. 
+
+
+Shear Stress: The shear stress is contributed by transverse shear stress only. Thus,
+\[
+\tau_A=\frac{V Q_A}{I t}=\frac{130.8\left[46.875\left(10^{-6}\right)\right]}{2.6367\left(10^{-6}\right)(0.075)}=31.0 \mathrm{kPa}
+\]
+
+\AnswerTag
+
+The state of stress at point \(F\) is represented on the element shown following.
+
+
+\begin{figure}[!ht]
+    \centering
+    \includesvg[width=0.4\textwidth]{a5.svg}
+    \caption{}
+\end{figure}
+\begin{flushright}
+\textbf{ans.}
+\end{flushright}
+\end{document}

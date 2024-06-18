@@ -1,0 +1,51 @@
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amsfonts, amssymb, graphicx, listings, hyperref, mathtools, fancyhdr, svg, booktabs, longtable, caption, pdflscape}
+
+\usepackage{colortbl}
+
+\newenvironment{outputeofcode}
+  {\par\centering\ttfamily} % Begin code
+  {\par}
+
+\hypersetup{
+    pdftitle={CE204_FP1_G6},
+    pdftoolbar=true,        % show Acrobat’s toolbar?
+    pdfmenubar=true,        % show Acrobat’s menu?
+    pdfauthor={Muhammet Yağcıoğlu},
+    pdfsubject={CE204_FP_RPs},
+    pdfcreator={Muhammet Yağcıoğlu},   % creator of the document
+    pdfproducer={Muhammet Yağcıoğlu}, % producer of the document
+    colorlinks,
+    linkcolor={black},
+    citecolor={black},
+    urlcolor={blue!80!black}
+}
+
+\fancyhead[R]{Group 6}
+\usepackage{setspace}
+\onehalfspacing
+\everymath{\displaystyle}
+
+
+\definecolor{Gray}{rgb}{0.5,0.5,0.5}
+\definecolor{darkgreen}{rgb}{0.0, 0.2, 0.13}
+
+\lstset
+{
+    basicstyle=\ttfamily,
+    frame=single,
+    language=python,
+    numbers=left,
+    numbersep=10pt,
+    numberstyle=\footnotesize\color{Gray},
+    showstringspaces=false,
+    tabsize=4,
+    % the more interesting/new bits
+    classoffset=1,% starting a new class
+    morekeywords={True},
+    classoffset=2,% starting another class
+    morekeywords={False},
+    classoffset=0,
+    breaklines=true
+}

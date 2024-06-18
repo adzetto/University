@@ -1,0 +1,418 @@
+\documentclass[12pt]{article}
+\input{confugiration.tex}
+\fancyhead[L]{CE204 Engineering Surveying - Report of Field Practice 1}
+\author{Muhammet Yağcıoğlu - 290204042}
+\usepackage{hyperref} 
+
+\begin{document}
+\onecolumn
+
+\begin{center}
+\bigskip
+\bigskip
+\textbf{\fontsize{14}{\baselineskip}\selectfont İzmir Institute of Technology}
+
+\bigskip
+
+\textbf{\fontsize{14}{\baselineskip}\selectfont In collaboration with}
+
+\bigskip
+
+\textbf{\fontsize{14}{\baselineskip}\selectfont Department of Civil Engineering}
+
+\bigskip
+
+\includesvg[width=5cm]{Picture1.svg}
+
+\bigskip
+
+\textbf{\fontsize{16}{\baselineskip}\selectfont CE204 – ENGINEERING
+SURVEYING}
+
+\bigskip
+
+\textbf{\fontsize{16}{\baselineskip}\selectfont 2023-2024 SPRING}
+
+\bigskip
+
+\bigskip
+
+\bigskip
+
+\textit{\textbf{\fontsize{14}{\baselineskip}\selectfont Field Practice – 1}}
+
+\bigskip
+
+\bigskip
+
+\bigskip
+
+\textbf{\fontsize{14}{\baselineskip}\selectfont Lecturer: Assoc. Prof. Volkan Emre UZ }
+
+\bigskip
+
+\textbf{\fontsize{14}{\baselineskip}\selectfont Group 6}
+
+\bigskip
+
+\textbf{\fontsize{14}{\baselineskip}\selectfont Team Leader: Melih Berke	KARAADAM}
+
+\bigskip
+
+Melih Berke	KARAADAM\\
+Mert BAY\\
+Mert BOSTANCI \\
+Mevlüt Yağız KÜL\\
+Muhammet YAĞCIOĞLU\\
+Muhammet Taylan ARSLAN\\
+
+
+\bigskip
+
+\bigskip
+
+\bigskip
+
+{\today}
+\end{center}
+
+\clearpage
+
+
+
+
+\thispagestyle{fancy}
+\pagestyle{fancy}
+\tableofcontents
+\newpage
+\begin{abstract}
+The experiment investigated two distance measurement techniques, namely steel-tape and pacing. The study focused on quantifying the identification and accumulation of errors. Steel-tape, which is influenced by walking patterns, generally produces more precise results compared to pacing. The study highlights the importance of choosing precise measurement procedures and detecting inaccuracies.
+\end{abstract}
+
+\section*{Introduction}
+\addcontentsline{toc}{section}{Introduction}
+
+The fundamental basis of surveying methodology lies on the quantification of spatial distances. The precision of these measurements is intimately associated with the accuracy of the subsequent technological designs and computations. Inevitably, all measures possess inherent flaws, which might manifest as either random or systematic in nature. Understanding the nature and magnitude of these mistakes is crucial in order to carry out survey work in a professional manner. This field exercise focuses on the widely utilised techniques of steel-tape measurement and pacing for measuring distance.  There exist three distinct objectives that need to be attained:
+
+\begin{enumerate}
+\item \textit{Error Analysis}: Determine the kinds and amounts of errors connected to each measuring technique and compare them.
+
+\item \textit{Pace Factor}: Determine individual pace factors within the team and assess the variability caused by personal walking styles.
+
+\item \textit{Statistical Evaluation}: Apply error propagation principles and statistical analysis to rigorously evaluate the precision and reliability of the collected measurements. 
+\end{enumerate}
+\newpage
+\vspace*{\fill}
+\begin{center}
+    This page is intentionally left blank.
+\end{center}
+% This fills the rest of the page with blank space.
+\vspace{\fill}
+
+
+\newpage
+\section*{Methodology}
+\addcontentsline{toc}{section}{Methodology}
+
+\subsection*{Equipments}
+\addcontentsline{toc}{subsection}{Equipments}
+
+The following instruments and tools were essential for the successful execution of this field practice:
+\begin{itemize}
+\item  Ranging Rods: Used for marking points and ensuring line-of-sight alignment.
+\item  Steel Tape:  A calibrated steel tape (specify length and precision) for direct distance measurements.
+\item  Plumb Bob: Employed to ensure verticality when transferring measurements to the ground.
+\item  Marking Pins and Pegs: For clearly delineating measurement endpoints and intermediate points.
+\end{itemize}
+
+\subsection*{Procedures}
+\addcontentsline{toc}{subsection}{Procedures}
+
+\subsection*{Pace Factor Determination}
+\addcontentsline{toc}{subsubsection}{Pace Factor Determination}
+
+On a flat terrain, the initial step is establishing a reference distance. Let L denote the known length of the reference distance. We meticulously measure this distance with precision by employing a steel tape. Subsequently, we proceed to conduct individual pacing trials involving each member of the team. Let n be the number of repetitions for each trial. During these trials, team members maintain a consistent and unhurried pace while walking the designated distance. During each trial, we meticulously record the number of steps taken by each individual.
+
+Let the number of steps taken by the \(i\)th team member in the \(j\)th trial is \(S_{ij}\). We have \(S_{ij}\) recorded for \(1 \leq i \leq \text{number of team members}\) and \(1 \leq j \leq n\). To calculate the pace factor for each individual, we use the following formula:
+
+\[PF_{ij} = \frac{L}{S_{ij}}\]
+
+The pace factor, denoted as \(PF_{ij}\), represents the ratio of the reference distance \(L\) to the number of steps \(S_{ij}\) taken by the \(i\)th team member in the \(j\)th trial. By performing these calculations for each individual and each trial, we obtain a set of pace factors corresponding to the walking performances of each team member.
+
+
+\subsection*{Indirect Ranging}
+\addcontentsline{toc}{subsubsection}{Indirect Ranging}
+
+\textit{Necessity.}  In scenarios where a direct line-of-sight measurement between two endpoints $A$ and $B$ is obstructed by obstacles $\mathcal{O}$, indirect ranging becomes necessary.  Let $\mathcal{L} = \{l_1, l_2, \dots, l_p\}$ represent the set of $p$ line segments that collectively define the indirect ranging path circumventing the obstacles.
+
+
+\vspace{5mm}
+
+\textit{Intermediate Point Establishment.} A series of intermediate points $\mathcal{P} = \{p_1, p_2, \dots, p_q\}$ are strategically established along a theoretical straight line connecting points $A$ and $B$. The careful positioning of these points, achieved through the use of ranging rods $\mathcal{R}$, ensures the colinearity of points in $\mathcal{P} \cup \{A, B\}$.
+
+\vspace{5mm}
+\textit{Segmented Measurement.}  The total distance $D_{AB}$ between points $A$ and $B$ is determined by summing the measured lengths of each unobstructed segment $l_j \in \mathcal{L}$.  The steel tape measurement of each segment $l_j$ yields a measured value $d_{lj}$ with associated error $\epsilon_{lj}$.  Therefore, an estimate of the total distance is:
+
+$$D_{AB} = \sum_{j=1}^{p} d_{lj} \pm \sum_{j=1}^{p} \epsilon_{lj}$$
+
+The aforementioned methodology enables the computation of the overall distance $D_AB$ by aggregating the observed segment lengths, while taking into account the propagation of errors linked to each individual measurement. 
+\newpage
+\section*{Data Analysis}
+\addcontentsline{toc}{section}{Data Analysis}
+
+
+\begin{figure}[ht!]
+    \centering
+    \includesvg[width=0.7\textwidth]{Page 2.svg}
+    \caption{Working Field}
+\end{figure}
+
+\begin{table}[ht!]
+\centering
+\begin{tabular}{ccccccccc}
+\hline
+No & From & To  & $1^{\operatorname{th}}$  & $2^{\operatorname{nd}}$  & $3^{\operatorname{rd}}$   & MVP & SD & SEM \\
+\hline
+1 & A & IP1 & 30.0000 & 29.7000 & 29.7200 &  &  &  \\
+2 & IP1 & IP2 & 30.0000 & 29.6900 & 29.7000 &  &  &  \\
+3 & IP2 & B & 23.2800 & 23.2700 & 23.2600 &  &  &   \\
+4 & C & IP3 & 30.0000 & 30.0000 & 30.0000 &  &  &  \\
+5 & IP3 & A & 12.6400 & 12.6600 & 12.7000 &  &  &  \\
+\hline
+\end{tabular}
+\caption{Pace-Factor Practice Working Field Measure Datas} 
+\end{table}
+
+
+\begin{table}[ht!]
+\centering
+\begin{tabular}{ccccccc}
+\hline
+Person & $1^{\text{st}}$ & $2^{\text{nd}}$ & $3^{\text{rd}}$ & MPV & SD & SEM \\
+\hline
+Melih Berke KARAADAM & 109.0000 & 109.0000 & 109.0000 &  &  &  \\
+Mert BAY & 112.0000 & 111.0000 & 113.0000 &  &  &  \\
+Mert BOSTANCI & 109.0000 & 110.0000 & 116.0000 &  &  &  \\
+Mevlüt Yağız KÜL & 112.0000 & 108.0000 & 110.0000 & &  &  \\
+Muhammet YAĞCIOĞLU & 102.0000 & 102.0000 & 102.0000 & && \\
+Muhammet Taylan ARSLAN & 114.0000 & 113.0000 & 115.0000 &&& \\
+\hline
+\end{tabular}
+\caption{Pacing Data}
+\end{table}
+
+\newpage
+
+\begin{figure}[ht!]
+    \centering
+    \includesvg[width=0.7\textwidth]{indirect.svg}
+    \caption{Working Field 2}
+\end{figure}
+
+
+\begin{table}[ht!]
+\centering
+\begin{tabular}{ccccccccc}
+\hline
+No & From & To  & $1^{\operatorname{th}}$  & $2^{\operatorname{nd}}$  & $3^{\operatorname{rd}}$   & MVP & SD & SEM \\
+\hline
+1 & $P_1$ & IP4 & 14.7000 & 14.8000& 14.6000 &  &  &  \\
+2 & IP4 & IP5 & 6.6000 & 6.5000 & 6.5000 &  &  &  \\
+3 & IP5 & IP6 & 30.0000 & 30.0000 & 30.0000 &  &  &   \\
+4 & IP6 & $P_2$ & 29.6000 & 28.6000 & 29.0000 &  &  &  \\
+\hline
+\end{tabular}
+\caption{Indirect Ranging Rod Process Field Measure Datas} 
+\end{table}
+
+
+\section*{Recalling Definitions}
+\addcontentsline{toc}{subsection}{Recalling Definitions}
+
+Let $\mathcal{D}$ be the set of all collected distance measurements, where each element $d_{ij} \in \mathcal{D}$ is the distance between points $i$ and $j$ on the $k$th trial. We can define a distance measurement function $f: \mathbb{R}^+ \times \mathbb{R}^+ \times \mathbb{N} \rightarrow \mathbb{R}^+$, where $\mathbb{R}^+$ is the set of positive real numbers and $\mathbb{N}$ is the natural numbers. Here, $f(i, j, k)$ is the distance measured between points $i$ and $j$ during the $k$th trial. The MPV, $\mu_{ij}$, of the distance between two points is the arithmetic mean of the corresponding distance measurements; the SD ($\sigma_{ij}$); the SEM ($\text{SE}_{ij}$) are:
+
+$$\mu_{ij} = \frac{1}{n} \sum_{k=1}^{n} f(i, j, k),$$
+$$\sigma_{ij} = \sqrt{\frac{1}{n-1} \sum_{k=1}^{n} (f(i, j, k) - \mu_{ij})^2},$$
+$$\text{SE}_{ij} = \frac{\sigma_{ij}}{\sqrt{n}}.$$
+
+For segmented distances (e.g., total distance split into multiple sections), the errors propagate. Assuming independent measurements, the total propagated error, $\sigma_{\text{total}}$, is determined using the following norm:
+
+$$\sigma_{\text{total}} = ||(\sigma_{i_1}, \sigma_{i_2}, ..., \sigma_{i_m})||_2$$
+
+where $\sigma_{i_l}$ is the propagated error of segment $l$ and $|| \cdot ||_2$ is the Euclidean norm. Let $P_m$ denote the number of paces taken by person $m$ over a known distance $D$. The pace factor for person $m$, denoted by $\text{PF}_m$, is calculated as:
+
+$$\text{PF}_m = \frac{D}{P_m}$$
+
+\textit{Example guide.} Consider the distance between points A and IP1, with measurements denoted by the set $M = \{d_{A,IP1}^{(1)}, d_{A,IP1}^{(2)}, d_{A,IP1}^{(3)}\}$. The MPV, SD, and SEM computed as follows:
+
+$$\mu_{A,IP1} = \frac{1}{n} \sum_{m \in M} d_{A,IP1}^{(m)}, \quad \sigma_{A,IP1} = \sqrt{\frac{1}{n-1} \sum_{m \in M} (d_{A,IP1}^{(m)} - \mu_{A,IP1})^2}, \quad
+\text{SE}_{A,IP1} = \frac{\sigma_{A,IP1}}{\sqrt{n}}.$$
+
+
+\newpage
+\section*{Results}
+\addcontentsline{toc}{section}{Results}
+
+$$d_{\text{AB}} = (29.8067, 29.7967, 23.2700) \in \mathbb{R}^3, \quad e_{\text{AB}} = (0.1677, 0.1762, 0.0100) \in \mathbb{R}^3,$$
+$$D_{\text{pacing}} = \begin{bmatrix}
+   109.0000 & 109.0000 & 109.0000 \\
+   112.0000 & 111.0000 & 113.0000 \\ 
+   109.0000& 110.0000& 116.0000\\
+   112.0000& 108.0000& 110.0000\\
+   102.0000& 102.0000& 102.0000 \\
+   114.0000 & 113.0000 & 115.0000 
+   \end{bmatrix} \in \mathbb{R}^{6 \times 3}.$$
+
+\begin{table}[ht!]
+\centering
+\begin{tabular}{ccccccccc}
+\hline
+No & From & To  & $1^{\operatorname{th}}$  & $2^{\operatorname{nd}}$  & $3^{\operatorname{rd}}$   & MVP & SD & SEM \\
+\hline
+1 & A & IP1 & 30.0000 & 29.7000 & 29.7200 & \textcolor{blue}{29.8067} & \textcolor{blue}{0.1677} & \textcolor{blue}{0.0968} \\
+2 & IP1 & IP2 & 30.0000 & 29.6900 & 29.7000 & \textcolor{blue}{29.7967} & \textcolor{blue}{0.1762} & \textcolor{blue}{0.1017} \\
+3 & IP2 & B & 23.2800 & 23.2700 & 23.2600 & \textcolor{blue}{23.2700} & \textcolor{blue}{0.0100} & \textcolor{blue}{0.0058}  \\
+4 & C & IP3 & 30.0000 & 30.0000 & 30.0000 & \textcolor{blue}{30.0000} & \textcolor{blue}{0.0000} & \textcolor{blue}{0.0000} \\
+5 & IP3 & A & 12.6400 & 12.6600 & 12.7000 & \textcolor{blue}{12.6667} & \textcolor{blue}{0.0306} & \textcolor{blue}{0.0176} \\
+\hline
+\end{tabular}
+\caption{Pace-Factor Practice Working Field Experiment Statistics} 
+\end{table}
+
+
+
+\begin{table}[ht!]
+\centering
+\begin{tabular}{ccccccc}
+\hline
+Person & $1^{\text{st}}$ & $2^{\text{nd}}$ & $3^{\text{rd}}$ & MPV & SD & SEM \\
+\hline
+Melih Berke KARAADAM & 109.0000 & 109.0000 & 109.0000 & \textcolor{blue}{109.0000} & \textcolor{blue}{0.0000} & \textcolor{blue}{0.0000} \\
+Mert BAY & 112.0000 & 111.0000 & 113.0000 & \textcolor{blue}{112.0000} & \textcolor{blue}{1.0000} & \textcolor{blue}{0.5774} \\
+Mert BOSTANCI & 109.0000 & 110.0000 & 116.0000 & \textcolor{blue}{111.6667} & \textcolor{blue}{3.7859} & \textcolor{blue}{2.1858} \\
+Mevlüt Yağız KÜL & 112.0000 & 108.0000 & 110.0000 & \textcolor{blue}{110.0000} & \textcolor{blue}{2.0000} & \textcolor{blue}{1.1547} \\
+Muhammet Yağcıoğlu & 102.0000 & 102.0000 & 102.0000 & \textcolor{blue}{102.0000} & \textcolor{blue}{0.0000} & \textcolor{blue}{0.0000} \\
+Muhammet Taylan ARSLAN & 114.0000 & 113.0000 & 115.0000 & \textcolor{blue}{114.0000} & \textcolor{blue}{1.0000} & \textcolor{blue}{0.5774} \\
+\hline
+\end{tabular}
+\caption{Pacing Data Statistics}
+\end{table}
+
+
+\begin{center}
+$\boxed{d_{\text{AB,total}} = 82.8734}, \boxed{\epsilon_{\text{AB}} =  0.243454},\boxed{\text{MPVs} =[109, 112, 111.67, 110, 102, 114]}$
+
+$\boxed{p_i= [0.3058, 0.2976, 0.2985, 0.3030, 0.3268, 0.2924]}.$
+\end{center}
+
+
+
+\begin{table}[ht!]
+\centering
+\begin{tabular}{ccccccccc}
+\hline
+No & From & To  & $1^{\operatorname{th}}$  & $2^{\operatorname{nd}}$  & $3^{\operatorname{rd}}$   & MVP & SD & SEM \\
+\hline
+1 & P1 & IP4 & 14.7000 & 14.8000 & 14.6000 & \textcolor{blue}{14.7000} & \textcolor{blue}{0.1000} & \textcolor{blue}{0.0577} \\
+2 & IP4 & IP5 & 6.6000 & 6.5000 & 6.5000 & \textcolor{blue}{6.5333} & \textcolor{blue}{0.0577} & \textcolor{blue}{0.0333} \\
+3 & IP5 & IP6 & 30.0000 & 30.0000 & 30.0000 & \textcolor{blue}{30.0000} & \textcolor{blue}{0.0000} & \textcolor{blue}{0.0000} \\
+4 & IP6 & P2 & 29.6000 & 28.6000 & 29.0000 & \textcolor{blue}{29.0667} & \textcolor{blue}{0.5033} & \textcolor{blue}{0.2906} \\
+\hline
+\end{tabular}
+\caption{Indirect Ranging Rod Process Field Measure Datas} 
+\end{table}
+
+$$\boxed{d_{P_1 \ P_2} = 80.3000} \qquad \boxed{\epsilon_{P_1 \ P_2} = 0.5164}$$
+
+\newpage
+\section*{Discussion}
+\addcontentsline{toc}{section}{Discussion}
+
+The purpose of this part is to thoroughly assess the empirical results obtained from field experiments using steel-tape measuring and pacing for distance estimate. The examination relies on comparing the accuracy and precision obtained from several approaches, finding common causes of mistake, and outlining recommendations designed to reduce measurement errors in future surveying projects.
+
+\subsection*{Interpretation of Results}
+\addcontentsline{toc}{subsection}{Interpretation of Results}
+
+The study is based on the measurement of accuracy and precision, which is intrinsic to the steel-tape and pacing procedures. The accuracy of steel-tape measures is shown by their low standard deviation. However, it is important to note that these measurements are not immune to systematic mistakes, which mostly arise from ambient conditions and the linear expansion of the tape. On the other hand, the pacing approach, while it is prone to more variability, offers a cost-efficient and efficient option for approximating distances over short distances. The individual pace components highlight the inherent diversity resulting from variations in strides and walking tempos across participants. The observed variety serves as evidence of the method's responsiveness to individual physical characteristics and the ease of navigating different terrains.
+
+Incorrect tape alignment and tensioning disparities are the primary sources of systematic mistakes, while random errors arise from variations in pacing rhythms and ground undulations. To mitigate these inaccuracies, it is essential to implement a comprehensive approach that involves thorough instruction in maintaining consistent pace and improving accuracy in tape measuring procedures.
+
+\subsection*{Limitations}
+\addcontentsline{toc}{subsection}{Limitations}
+
+While pacing may be useful for making fast estimations, it is fundamentally faulty when used to tasks that need a high level of precision. The effectiveness of the strategy is significantly reduced when used on rough terrains or in unfavourable environmental circumstances, when it is difficult to maintain constant stride lengths. The steel-tape approach, while more accurate, is nonetheless susceptible to the constraints imposed by physical barriers and requires careful handling to guarantee precision.
+
+\subsection*{Contextualization}
+\addcontentsline{toc}{subsection}{Contextualization}
+
+The findings obtained from this research are relevant to a wide range of surveying activities where minimising errors is of utmost importance. In the field of engineering surveying, where the potential for mistake is severely limited, the accuracy of distance measurements has a direct impact on the dependability and security of built structures.
+
+\subsection*{Analytical Reflections}
+\addcontentsline{toc}{subsection}{Analytical Reflections}
+
+The identified mistakes, whether they are disseminated or systemic in nature, provide a foundation for improving measuring methodologies. The variability in individual pace parameters suggests the impact of subjective factors, which may include differences in biomechanics and external obstacles. One approach to mitigating errors involves the calibration of devices to suit the specific environmental circumstances, as well as the use of digital surveying technologies that provide enhanced precision and robustness against both physical and systemic biases.
+
+\subsection*{Conclusionary Recommendations}
+\addcontentsline{toc}{subsection}{Conclusionary Recommendations}
+
+In the field of surveying, it is crucial to continuously pursue methodological improvement and minimise errors. In order to improve accuracy, minimise systematic and random mistakes, and customise surveying procedures to meet the unique requirements of the terrain and work, it is recommended that future practices use technology improvements with conventional approaches. The cultivation of collaboration and effective communication, as seen in this field exercise, continues to be a fundamental aspect in attaining precise and dependable surveying results.
+
+
+
+\section*{Conclusion}
+\addcontentsline{toc}{section}{Conclusion}
+
+The conducted field practice, which centred on the measurement of steel-tape and pacing distance, provided valuable insights into the many kinds of errors inherent in surveying and underscored the need of statistical assessment in enhancing accuracy. The primary findings include the recognition and measurement of both systematic and random mistakes, the efficacy of statistical methodologies in evaluating the accuracy of measurements, and the successful attainment of educational goals pertaining to error analysis and propagation.
+
+The aforementioned experience highlighted the need of reducing measurement mistakes by gaining a more comprehensive understanding of their origins and using statistical methodologies. It is advisable to use contemporary technology, such as electronic distance measuring equipment, GPS, and laser scanning, in order to enhance the precision of surveying in the future. These technologies provide enhanced accuracy and robustness in comparison to conventional approaches.
+
+In conclusion, the field practice successfully achieved its educational goals by deepening our comprehension of surveying faults and their mitigation, while also emphasising the persistent need for embracing cutting-edge technology and continual skill enhancement within the surveying profession.
+
+
+
+\newpage
+\section*{Appendix}
+\addcontentsline{toc}{section}{Appendix}
+
+\begin{lstlisting}[language=Python]
+import numpy as np
+import pandas as pd
+
+# Function to calculate MVP, SD, and SEM
+def calculate_statistics(data):
+    df = pd.DataFrame(data)
+    df['MVP'] = df.iloc[:, 2:].mean(axis=1)
+    df['SD'] = df.iloc[:, 2:].std(axis=1, ddof=1)
+    df['SEM'] = df['SD'] / np.sqrt(df.shape[1] - 2)  # Assuming 3 measurements, adjust if necessary
+    return df
+
+# Data from the tables
+data_pace_factor_practice = {
+    "From": ["A", "IP1", "IP2", "C", "IP3"],
+    "To": ["IP1", "IP2", "B", "IP3", "A"],
+    "1st": [30.0000, 30.0000, 23.2800, 30.0000, 12.6400],
+    "2nd": [29.7000, 29.6900, 23.2700, 30.0000, 12.6600],
+    "3rd": [29.7200, 29.7000, 23.2600, 30.0000, 12.7000],
+}
+
+data_pacing = {
+    "Person": ["Melih Berke KARAADAM", "Mert BAY", "Mert BOSTANCI", "Mevlut Yagiz KUL", "Muhammet YAGCIOGLU", "Muhammet Taylan ARSLAN"],
+    "1st": [109.0000, 112.0000, 109.0000, 112.0000, 102.0000, 114.0000],
+    "2nd": [109.0000, 111.0000, 110.0000, 108.0000, 102.0000, 113.0000],
+    "3rd": [109.0000, 113.0000, 116.0000, 110.0000, 102.0000, 115.0000],
+}
+
+data_indirect_ranging = {
+    "From": ["P_1", "IP4", "IP5", "IP6"],
+    "To": ["IP4", "IP5", "IP6", "P_2"],
+    "1st": [14.7000, 6.6000, 30.0000, 29.6000],
+    "2nd": [14.8000, 6.5000, 30.0000, 28.6000],
+    "3rd": [14.6000, 6.5000, 30.0000, 29.0000],
+}
+
+# Calculating statistics for each dataset
+df_pace_factor_practice = calculate_statistics(data_pace_factor_practice)
+df_pacing = calculate_statistics(data_pacing)
+df_indirect_ranging = calculate_statistics(data_indirect_ranging)
+\end{lstlisting}
+\end{document}

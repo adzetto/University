@@ -1,0 +1,178 @@
+\documentclass[12pt]{article}
+\input{confugiration.tex}
+\fancyhead[L]{CE 205 Statistical Methods for Engineers, Fall 2023, Homework-4 }
+\title{\vspace{-1cm}CE 205 - HW4}
+\author{Muhammet Yağcıoğlu - 290204042}
+\usepackage{hyperref} 
+
+\begin{document}
+\maketitle\thispagestyle{fancy}
+\pagestyle{fancy}
+\tableofcontents
+\newpage
+\section*{Question 1}
+\addcontentsline{toc}{section}{Question 1}
+\begin{q}
+Q1) (30p) Consider the Poisson distribution
+\[
+f(x)=\frac{e^{-\lambda} \lambda^x}{x !}, \quad x=0,1,2, \ldots
+\]
+Find the maximum likelihood estimator of \(\lambda\), based on a random sample of size \(n\).
+\end{q}
+
+Let \( X_1, X_2, \ldots, X_n \) be independent and identically distributed random variables following a Poisson distribution with parameter \(\lambda > 0\). The probability mass function of each \(X_i\) is given by
+\[ f(x_i; \lambda) = \frac{e^{-\lambda} \lambda^{x_i}}{x_i!}, \quad x_i \in \{0, 1, 2, \ldots\} \in \mathbb{N}_0. \]
+
+The likelihood function for the sample \(X_1, X_2, \ldots, X_n\) is the product of the individual probability mass functions, reflecting the independence of the \(X_i\)'s:
+\[ L(\lambda; x_1, \ldots, x_n) = \displaystyle\prod_{i=1}^n f(x_i; \lambda) = \displaystyle\prod_{i=1}^n \frac{e^{-n\lambda} \lambda^{\sum_{i=1}^n x_i}}{x_i!} = e^{-n\lambda} \lambda^{\sum_{i=1}^n x_i} \displaystyle\prod_{i=1}^n \frac{1}{x_i!}. \]
+
+To find the MLE of \(\lambda\), we optimize \(L\) with respect to \(\lambda\). Given the multiplicative structure of \(L\), it is convenient to work with the natural logarithm of the likelihood function, \(\ln L(\lambda; x_1, \ldots, x_n)\), which transforms the product into a sum, facilitating differentiation. Therefore, 
+\[ \ln L(\lambda) = \ln \left( e^{-n\lambda} \lambda^{\sum_{i=1}^n x_i} \displaystyle\prod_{i=1}^n \frac{1}{x_i!} \right) = -n\lambda + \left( \sum_{i=1}^n x_i \right) \ln \lambda - \sum_{i=1}^n \ln(x_i!). \]
+
+Consider a real-valued function \( f : (a, b) \to \mathbb{R} \), where \( (a, b) \subset \mathbb{R} \). Let \( x_0 \) be a point in \( (a, b) \) at which \( f \) attains a local extremum. Fermat's Theorem states that if \( f \) is differentiable at \( x_0 \), then the derivative of \( f \) at \( x_0 \) must be zero, \( f'(x_0) = 0 \). Using this theorem to the log-likelihood function \( \ln L(\lambda) \), we consider the derivative of this function with respect to a parameter \( \lambda \). Let \( \lambda \) be a parameter in a parameter space \( \Lambda \subseteq \mathbb{R} \), and let \( L : \Lambda \to \mathbb{R} \) be the likelihood function. The log-likelihood function \( \ln L(\lambda) \) is then a real-valued function on \( \Lambda \). 
+
+\[ \frac{d}{d\lambda} \ln L(\lambda) = -n + \frac{1}{\lambda} \sum_{i=1}^n x_i \stackrel{!}{=} 0. \]
+
+Solving for \(\lambda\) yields
+\[ \lambda = \frac{1}{n} \sum_{i=1}^n x_i. \]
+
+This expression for \(\lambda\) is the MLE of the parameter for the Poisson distribution, denoted as \(\hat{\lambda}\). It represents the sample mean of the observed values \(x_1, x_2, \ldots, x_n\).
+\AnswerTag
+
+
+\vfill
+\begin{flushright}
+\textbf{ans.} \(\hat{\lambda} = \frac{1}{n} \sum_{i=1}^n x_i, \quad x_i\in \mathbb{N}_0.\)
+\end{flushright}
+
+
+\newpage
+\section*{Question 2}
+\addcontentsline{toc}{section}{Question 2}
+\begin{q}
+Q2) (30p) The following scores represent the final examination grades for an elementary statistics course:
+
+\begin{center}
+\begin{tabular}{lllllllll}
+23 & 60 & 79 & 32 & 57 & 74 & 52 & 70 & 82 \\
+36 & 80 & 77 & 81 & 95 & 41 & 65 & 92 & 85 \\
+55 & 76 & 52 & 10 & 64 & 75 & 78 & 25 & 80 \\
+98 & 81 & 67 & 41 & 71 & 83 & 54 & 64 & 72 \\
+88 & 62 & 74 & 43 & 60 & 78 & 89 & 76 & 84 \\
+48 & 84 & 90 & 15 & 79 & 34 & 67 & 17 & 82 \\
+69 & 74 & 63 & 80 & 85 & 61 & & &
+\end{tabular}
+\end{center}
+
+a) Construct a relative frequency histogram, draw an estimate of the graph of the distribution, and discuss the skewness of the distribution.
+
+b) Compute the sample mean, sample median, and sample standard deviation.
+\end{q}
+
+\subsection*{Part a}
+\addcontentsline{toc}{subsection}{Part a}
+
+Let the dataset \( \mathcal{D} \) be the collection of final examination grades in an elementary statistics course. Construct a relative frequency histogram based on class intervals. Consider intervals \(I_k = [10k, 10(k+1))\) for \(k \in \{1, 2, \ldots, 9\}\). Let \(f_k\) be the frequency of grades in \(I_k\), and \(n\) the total number of observations in \( \mathcal{D} \). Compute the relative frequency \( r_k = \frac{f_k}{n} \). \textit{Calculation of Frequencies}: For each interval \(I_k\), count the number of grades in \( \mathcal{D} \) that lie within \(I_k\). This count is \(f_k\). \textit{Total Number of Observations}: \( n = |\mathcal{D}| = 60 \) (the cardinality of set \( \mathcal{D} \)). \textit{Relative Frequencies}: Compute \( r_k = \frac{f_k}{n} \) for each interval \(I_k\). The relative frequency distribution table is constructed as
+\begin{center}
+\resizebox{0.7\textwidth}{!}{
+\[
+\begin{array}{c|c|c|c}
+\text{Class Interval} & \text{Class Midpoint} & \text{Frequency, } f & \text{Relative Frequency} \\
+\hline
+10-19 & 14.5 & 3 & 0.05 \\
+20-29 & 24.5 & 2 & 0.03 \\
+30-39 & 34.5 & 3 & 0.05 \\
+40-49 & 44.5 & 4 & 0.07 \\
+50-59 & 54.5 & 5 & 0.08 \\
+60-69 & 64.5 & 11 & 0.18 \\
+70-79 & 74.5 & 14 & 0.23 \\
+80-89 & 84.5 & 14 & 0.23 \\
+90-99 & 94.5 & 4 & 0.07 \\
+\end{array}
+\]
+}
+\end{center}
+Next, construct a histogram using these relative frequencies. To analyze the skewness of the distribution, observe the asymmetry in the histogram. Skewness is a measure of the asymmetry of the probability distribution of a real-valued random variable about its mean. The skewness value can be positive, zero, negative, or undefined. In the context of real analysis, if the left tail (lower values) is more pronounced, the distribution is said to be left-skewed. If the right tail (higher values) is longer, the distribution is right-skewed. Thus,  \underline{the distribution skews to the left.}
+
+
+\begin{figure}
+    \centering
+    \resizebox{0.7\textwidth}{!}{\input{histogram_with_skewness.pgf}}
+    \caption{}
+\end{figure}
+
+\AnswerTag
+
+\subsection*{Part b}
+\addcontentsline{toc}{subsection}{Part b}
+
+
+
+\[ \bar{X} = \frac{1}{n} \sum_{i=1}^{n} x_i = \frac{1}{60}(23 + 60 + 79 + \ldots + 85 + 61) = 65.4833\] 
+
+Ordered list:
+\begin{center}
+\begin{tabular}{rrrrrrrrr}
+\toprule
+10.0 & 15.0 & 17.0 & 23.0 & 25.0 & 32.0 & 34.0 & 36.0 & 41.0 \\
+41.0 & 43.0 & 48.0 & 52.0 & 52.0 & 54.0 & 55.0 & 57.0 & 60.0 \\
+60.0 & 61.0 & 62.0 & 63.0 & 64.0 & 64.0 & 65.0 & 67.0 & 67.0 \\
+69.0 & 70.0 & \textcolor{red}{71.0} & \textcolor{red}{72.0} & 74.0 & 74.0 & 74.0 & 75.0 & 76.0 \\
+76.0 & 77.0 & 78.0 & 78.0 & 79.0 & 79.0 & 80.0 & 80.0 & 80.0 \\
+81.0 & 81.0 & 82.0 & 82.0 & 83.0 & 84.0 & 84.0 & 85.0 & 85.0 \\
+88.0 & 89.0 & 90.0 & 92.0 & 95.0 & 98.0 &  &  &  \\
+\bottomrule
+\end{tabular}
+\end{center}
+\[
+\tilde{X}=71.5000
+\]
+
+
+   \[ s = \sqrt{\frac{1}{59}((23 - \bar{X})^2 + (60 - \bar{X})^2 + \ldots + (85 - \bar{X})^2 + (61 - \bar{X})^2)} = 21.1335\]
+
+\AnswerTag
+
+\vfill
+\begin{flushright}
+\textbf{ans.} (a) The distribution skews to the left. (b) \(\bar{X}=65.4833, \tilde{X}=71.5000\) and \(s=21.1335\).
+\end{flushright}
+
+
+
+
+
+\newpage
+\section*{Question 3}
+\addcontentsline{toc}{section}{Question 3}
+\begin{q}
+Q3) (40p) Data on oxide thickness of semiconductors are as follows: \(425,431,416,419,421,436\), \(418,410,431,433,423,426,410,435,436,428,411,426,409,437,422,428,413,416\).
+(a) Calculate a point estimate of the mean oxide thickness for all wafers in the population.
+(b) Calculate a point estimate of the standard deviation of oxide thickness for all wafers in the population.
+\end{q}
+
+
+\subsection*{Part a}
+\addcontentsline{toc}{subsection}{Part a}
+
+\[
+\bar{X} = \frac{1}{n} \sum_{i=1}^{n} X_i = \frac{1}{24} \times 10160 = 423.3333 \, \text{Angstroms}.
+\]
+\AnswerTag
+
+\subsection*{Part b}
+\addcontentsline{toc}{subsection}{Part b}
+
+
+\[
+s = \sqrt{\frac{1}{n-1} \sum_{i=1}^{n} (X_i - \bar{X})^2} = \sqrt{82.4928} = 9.0826 \, \text{Angstroms}.
+\]
+\AnswerTag
+
+
+
+\vfill
+\begin{flushright}
+\textbf{ans.} (a) \(\bar{X} = 423.3333 \, \text{Angstroms}.\) (b) \(s= 9.0826 \, \text{Angstroms}.\)
+\end{flushright}
+\end{document}

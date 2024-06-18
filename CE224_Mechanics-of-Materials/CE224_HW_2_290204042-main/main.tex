@@ -1,0 +1,180 @@
+\documentclass[12pt]{article}
+\input{confugiration.tex}
+\fancyhead[L]{CE 224 Mechanics of Materials, Fall 2023, Homework-2 }
+\title{\vspace{-1cm}CE 224 - HW2}
+\author{Muhammet Yağcıoğlu - 290204042}
+\usepackage{hyperref} 
+ \hypersetup{ 
+     colorlinks=true, 
+     linkcolor=blue, 
+     filecolor=blue, 
+     citecolor = black,       
+     urlcolor=cyan, 
+     } 
+\begin{document}
+\maketitle\thispagestyle{fancy}
+\pagestyle{fancy}
+\tableofcontents
+\newpage
+
+
+
+\section*{Question 1}
+\addcontentsline{toc}{section}{Question 1}
+\begin{q}
+1. The nonprismatic cantilever circular bar has an internal cylindrical hole from 0 to \(x\), so that the net polar moment of inertia of the cross section for segment 1 is \((7 / 8) I_p\). Torque \(T, T\) is applied at \(x\) and torque \(T / 2\) is applied at \(x=L\). Assume that \(G\) is constant.
+(a) Find reaction moment \(\mathbf{R}_1\)
+(b) Find internal torsional moments \(T_i\) in segments 1 and 2.
+(c) Find \(x\) required to obtain twist at joint 3 of \(\phi_3=\mathrm{TL} / \mathrm{GI}_{\mathrm{p}}\)
+(d) What is the rotation at joint \(2, \phi_2\) ?
+\end{q}
+
+
+\begin{figure}[!ht]
+    \centering
+    \resizebox{0.7\textwidth}{!}{\includegraphics{image.png}}
+    \caption{}
+    \label{fig:enter-label}
+\end{figure}
+
+\subsection*{Part a}
+To determine the reaction moment \(\mathbf{R}_1\) at the fixed end of the bar (point \(0\)), consider the equilibrium of moments about the x-axis. For a body in static equilibrium, the sum of external moments about any axis must equal zero.
+
+\[
+\sum M_x = 0,
+\]
+\[
+R_1 + T + \frac{T}{2} = 0,
+\]
+\[
+R_1 = -\left(T + \frac{T}{2}\right) = -\frac{3T}{2}. \impliedby
+\]
+\AnswerTag
+
+\subsection*{Part b}
+
+The internal torsional moment \(T_1\) must counterbalance the reaction moment \(\mathbf{R}_1\) at the fixed end. This equilibrium condition is:
+\[
+T_1 + R_1 = 0,
+\]
+\[
+T_1 =- R_1 = \frac{3T}{2}.
+\]
+\AnswerTag
+
+
+Next, for segment 2, which extends from \(x\) to \(L\), the internal torsional moment \(T_2\) is influenced by the torque applied at \(x = L\). In this case, \(T_2\) is simply the external torque applied at the end of this segment. Since the segment is only subjected to the torque \(\frac{T}{2}\) at \(L\), and no other torsional effects are present within this segment, \(T_2\) equates directly to this applied torque. Thus,
+\[
+T_2 = \frac{T}{2}.
+\]
+\AnswerTag
+
+\subsection*{Part c}
+
+Let the angular twist in a bar subjected to torsion be governed by the relation \(\phi = \frac{TL}{GI_p}\). For the given nonprismatic bar, the polar moment of inertia varies along its length due to the presence of an internal cylindrical hole up to point \(x\). The total twist \(\phi_3\) at the far end of the bar (joint 3) is the sum of the twists in each segment. In segment 1 (from \(0\) to \(x\)), the polar moment of inertia is \(\frac{7}{8}I_p\), and the applied torque is \(T_1\), previously determined as \(\frac{3T}{2}\). In segment 2 (from \(x\) to \(L\)), the polar moment of inertia is \(I_p\), and the applied torque is \(T_2 = \frac{T}{2}\). Thus, the equation for \(\phi_3\) becomes:
+
+\[\phi_3=\sum \frac{T_i L_i}{G I_{P_i}},\]
+\[
+\phi_3 = \frac{T_1 x}{G \left(\frac{7}{8}I_p\right)} + \frac{T_2 (L - x)}{G I_p},
+\]
+\[
+\frac{TL}{GI_p} = \frac{\left(\frac{3T}{2}\right) x}{G \left(\frac{7}{8}I_p\right)} + \frac{\left(\frac{T}{2}\right) (L - x)}{G I_p},
+\]
+\[
+x = \frac{7L}{17} \impliedby .
+\]
+\AnswerTag
+\subsection*{Part d}
+
+For segment 1, extending from 0 to \(x\), the modified polar moment of inertia is \(\frac{7}{8}I_p\), and the internal torsional moment \(T_1\) is \(\frac{3T}{2}\). The specified \(x\) has been previously determined as \(\frac{7L}{17}\). Applying the torsion formula to segment 1, \(\phi_2\) is given by:
+\[
+\phi_2 = \frac{T_1 x}{G\left(\frac{7}{8}I_p\right)} = \frac{\left(\frac{3T}{2}\right) \left(\frac{7L}{17}\right)}{G\left(\frac{7}{8}I_p\right)},
+\]
+\[
+\phi_2 = \frac{12TL}{17GI_p}.
+\]
+\AnswerTag
+
+
+
+\vfill
+\begin{flushright}
+\textbf{ans.} \(R_1=-\frac{3T}{2}^{\impliedby}, T_1= \frac{3T}{2}, T_2 = \frac{T}{2}, x = \frac{7L}{17}^{\impliedby}, \phi_2 = \frac{12TL}{17GI_p}.\)
+\end{flushright}
+
+\newpage
+\section*{Question 2}
+\addcontentsline{toc}{section}{Question 2}
+\begin{q}
+The composite shaft shown in the figure is manufactured by shrink-fitting a steel sleeve over a brass core so that the two parts act as a single solid bar in torsion. The outer diameters of the two parts are \(d_1=40 \mathrm{~mm}\) for the brass core and \(d_2=50 \mathrm{~mm}\) for the steel sleeve. The shear moduli of elasticity are \(G_b=36 \mathrm{GPa}\) for the brass and \(G_s=80 \mathrm{GPa}\) for the steel. Assuming that the allowable shear stresses in the brass and steel are \(\tau_b\) \(=48 \mathrm{MPa}\) and \(\tau_s=80 \mathrm{MPa}\), respectively, determine the maximum permissible torque \(T_{\max }\) that may be applied to the shaft.
+\end{q}
+
+\begin{figure}[!ht]
+    \centering
+    \resizebox{0.7\textwidth}{!}{\includegraphics{Screenshot 2023-11-30 153507.png}}
+    \caption{}
+    \label{fig:enter-label}
+\end{figure}
+
+
+Consider a composite shaft, comprising a brass core and a steel sleeve. Let the outer diameters be \(d_1=40 \text{ mm}\) for brass and \(d_2=50 \text{ mm}\) for steel. The respective shear modulus of elasticity are \(G_B=36 \text{ GPa}\) for brass and \(G_S=80 \text{ GPa}\) for steel. Let the allowable shear stresses be \(\tau_b=48 \text{ MPa}\) for brass and \(\tau_s=80 \text{ MPa}\) for steel. The torsional rigidity of a cylindrical shaft is given by the product of its shear modulus and the polar moment of inertia. For the brass core and steel sleeve, the polar moments of inertia are calculated 
+
+\[
+I_{p B}=\frac{\pi}{32} d_1^4, \quad I_{p S}=\frac{\pi}{32}(d_2^4-d_1^4)
+\]
+
+Given that the brass and steel sections deform together, their angular deformations are equal. That is, \(\phi_1 = \phi_2\), where \(\phi_1\) and \(\phi_2\) the angular deformations of the brass core and steel sleeve, respectively. The torques in the brass \(T_B\) and steel \(T_S\) can be expressed
+
+\[
+\because \phi_1=\phi_2
+\]
+\[
+\because\phi_1=\frac{T_1 L}{G_1 I_{p 1}} \quad \phi_2=\frac{T_2 L}{G_2 I_{p 2}}
+\]
+\[
+\because\frac{T_1 L}{G_1 I_{p 1}}=\frac{T_2 L}{G_2 I_{p 2}}
+\]
+\[
+\because T_1=T\left(\frac{G_1 I_{p 1}}{G_1 I_{p 1}+G_2 I_{p 2}}\right) \quad T_2=T\left(\frac{G_2 I_{p 2}}{G_1 I_{p 1}+G_2 I_{p 2}}\right)
+\]
+
+\[
+\therefore T_B=T\left(\frac{G_B I_{p B}}{G_B I_{p B}+G_S I_{p S}}\right), \quad T_S=T\left(\frac{G_S I_{p S}}{G_B I_{p B}+G_S I_{p S}}\right)
+\]
+
+Since
+
+\[T_{\text{max}}=\frac{\tau I}{d/2}\]
+The maximum torques for brass and steel before yielding occurs are given by:
+\[
+T_{B \max}=\frac{2 \tau_b I_{p B}}{d_1}, \quad T_{S \max}=\frac{2 \tau_s I_{p S}}{d_2}
+\]
+
+Substituting
+
+\[
+T_{\max B} = \frac{2 \tau_b I_{p B}}{d_1}\left(\frac{G_B I_{p B}+G_S I_{p S}}{G_B I_{p B}}\right), \quad T_{\max S} = \frac{2 \tau_s I_{p S}}{d_2}\left(\frac{G_B I_{p B}+G_S I_{p S}}{G_S I_{p S}}\right)
+\]
+
+which gives
+
+\[
+\begin{aligned}
+T_{\max B} & =2535.265 \mathrm{~N}\mathrm{m} \\
+T_{\max S} & =1521.159 \mathrm{~N}\mathrm{m}
+\end{aligned}
+\]
+
+Small value governs, so
+
+\[
+T_{\max }=1521.159 \mathrm{~N}\mathrm{m}.
+\]
+\AnswerTag
+
+
+\vfill
+\begin{flushright}
+\textbf{ans.} \(T_{\max }=1521.159 \mathrm{~N}\mathrm{m}.\)
+\end{flushright}
+\end{document}

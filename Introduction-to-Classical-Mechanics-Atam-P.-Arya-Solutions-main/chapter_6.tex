@@ -1,0 +1,522 @@
+\section{Chapter 6's Solutions}
+
+\begin{problem}{6.4}
+	The motion of a particle is described by the following equations. Find the velocity and acceleration, giving a geometrical interpretation, if any, in each case.
+	\begin{enumerate}
+		\item[(a)] \(\mathbf{r}=a t \hat{i}+b t^2 \hat{\mathbf{j}}\)
+		\item[(b)] \(\mathbf{r}=a t \hat{\mathbf{i}}+A \cos \omega t \hat{\mathbf{j}}\)
+		\item[(c)] \(\mathbf{r}=a t \hat{\mathbf{i}}+A \cos \omega t \hat{\mathbf{j}}+B \sin \omega t \hat{\mathbf{k}}\)
+		\item[(d)] \(\mathbf{r}=e^{k t} \hat{\mathbf{u}}_r, \theta=a t\), in polar coordinates
+		\item[(e)] \(\mathbf{r}=a \hat{\mathbf{u}}_{\mathrm{r}}, \theta=B \sin \omega t, \phi=b t\), in spherical coordinates.
+	\end{enumerate}
+\end{problem}
+
+\begin{solution}{6.4}{a}
+	
+	Given the position vector \(\mathbf{r} = a t \hat{i} + b t^2 \hat{\mathbf{j}}\), let us calculate the velocity and acceleration.
+	
+	\textit{Velocity.}
+	The velocity vector \(\mathbf{v}\) is the first derivative of the position vector with respect to time \(t\):
+	\[
+	\mathbf{v} = \frac{d\mathbf{r}}{dt} = \frac{d}{dt}(a t \hat{i} + b t^2 \hat{\mathbf{j}}) = a \hat{i} + 2bt \hat{\mathbf{j}}.
+	\]
+	
+	\textit{Acceleration.}
+	The acceleration vector \(\mathbf{a}\) is the first derivative of the velocity vector with respect to time \(t\):
+	\[
+	\mathbf{a} = \frac{d\mathbf{v}}{dt} = \frac{d}{dt}(a \hat{i} + 2bt \hat{\mathbf{j}}) = 2b \hat{\mathbf{j}}.
+	\]
+	
+	\textit{Geometrical Interpretation.}
+	While the \(i\)-component remains constant, the velocity vector shows that the \(j\)-component is increasing linearly with time. A continuous acceleration in the \(j\)-direction can be observed by the acceleration vector, which is \(2b \hat{\mathbf{j}}\). On the plane from \(i\) to \(j\), the motion is parabolic.
+
+\end{solution}
+
+\begin{solution}{6.4}{b}
+	
+	Given the position vector \(\mathbf{r} = a t \hat{\mathbf{i}} + A \cos \omega t \hat{\mathbf{j}}\).
+	
+	\textit{Velocity.}
+	\[
+	\mathbf{v} = \frac{d\mathbf{r}}{dt} = \frac{d}{dt}(a t \hat{\mathbf{i}} + A \cos \omega t \hat{\mathbf{j}}) = a \hat{\mathbf{i}} - A \omega \sin \omega t \hat{\mathbf{j}}.
+	\]
+	
+	\textit{Acceleration.}
+	\[
+	\mathbf{a} = \frac{d\mathbf{v}}{dt} = \frac{d}{dt}(a \hat{\mathbf{i}} - A \omega \sin \omega t \hat{\mathbf{j}}) = -A \omega^2 \cos \omega t \hat{\mathbf{j}}.
+	\]
+	
+	\textit{Geometrical Interpretation.}
+	The motion is a combination of uniform motion in the \(i\)-direction and harmonic motion in the \(j\)-direction. The particle oscillates along the \(j\)-axis while moving linearly along the \(i\)-axis.
+	
+\end{solution}
+
+
+\begin{solution}{6.4}{c}
+
+	Given \(\mathbf{r} = a t \hat{\mathbf{i}} + A \cos \omega t \hat{\mathbf{j}} + B \sin \omega t \hat{\mathbf{k}}\).
+	
+	\textit{Velocity.}
+	\[
+	\mathbf{v} = \frac{d\mathbf{r}}{dt} = a \hat{\mathbf{i}} - A \omega \sin \omega t \hat{\mathbf{j}} + B \omega \cos \omega t \hat{\mathbf{k}}.
+	\]
+	
+	\textit{Acceleration.}
+	\[
+	\mathbf{a} = \frac{d\mathbf{v}}{dt} = -A \omega^2 \cos \omega t \hat{\mathbf{j}} - B \omega^2 \sin \omega t \hat{\mathbf{k}}.
+	\]
+	
+	\textit{Geometrical Interpretation.}
+	In this situation, we see a helical motion in three dimensions, consistently moving along the \(i\)-axis and in a circular pattern in the \(j\)-\(k\) plane.
+\end{solution}
+
+\begin{solution}{6.4}{d}
+
+    \textit{Velocity.}
+    
+    The velocity in polar coordinates is given by:
+    \[
+    \mathbf{v} = \dot{r} \hat{\mathbf{u}}_r + r \dot{\theta} \hat{\mathbf{u}}_\theta .
+    \]
+    Where \( \dot{r} = \frac{d}{dt} (e^{k t}) = k e^{k t} \) and \( \dot{\theta} = \frac{d}{dt} (a t) = a \).
+    
+    \[
+    \mathbf{v} = k e^{k t} \hat{\mathbf{u}}_r + e^{k t} a \hat{\mathbf{u}}_\theta .\]
+    
+    \textit{Acceleration.}
+
+    
+    The acceleration in polar coordinates is given by:
+    \[
+    \mathbf{a} = (\ddot{r} - r \dot{\theta}^2) \hat{\mathbf{u}}_r + (r \ddot{\theta} + 2 \dot{r} \dot{\theta}) \hat{\mathbf{u}}_\theta.
+    \]
+    Where \( \ddot{r} = \frac{d}{dt} (k e^{k t}) = k^2 e^{k t} \) and \( \ddot{\theta} = \frac{d}{dt} (a) = 0 \).
+    
+    \[
+    \mathbf{a} = (k^2 e^{k t} - e^{k t} a^2) \hat{\mathbf{u}}_r + 2 k e^{k t} a \hat{\mathbf{u}}_\theta.
+    \]
+    
+
+    \textit{Geometrical Interpretation.}
+
+
+    The particle follows a path that resembles a logarithmic spiral. The exponential growth of the radial component \(e^{kt}\) suggests that the radius increases rapidly over time, indicating that the particle is moving away from the origin at an accelerating pace. When the angular component \(\theta = a t\) is present, it results in a uniform angular velocity. This causes the particle to continuously revolve around the origin at a consistent rate. 
+
+    The velocity vector consists of a radial component that experiences exponential growth (signifying a direct increase in speed away from the origin) and a perpendicular tangential component caused by angular motion. The acceleration vector consists of both a radial component and a tangential component. The equation \((k^2 e^{k t} - e^{k t} a^2)\) describes a fascinating phenomenon characterised by the interaction between exponential growth and the square of the angular velocity. This interplay between centrifugal force (\(-e^{k t} a^2\)) and the exponential radial increase (\(k^2 e^{k t}\)) leads to a complex behaviour. The tangential acceleration (\(2 k e^{k t} a\)) highlights a notable angular acceleration component, which leads to a growing tangential velocity as the particle moves away.
+
+    
+    \textit{Code.}
+\begin{lstlisting}[language=Mathematica,style=Mathematica,caption={Calculates the Cartesian components of the velocity and acceleration vectors for a particle described by polar coordinates \(r = e^{kt}\) and \(\theta = at\).}]
+r[t_] := Exp[k t] {Cos[a t], Sin[a t]}
+v[t_] := D[r[t], t]
+a[t_] := D[v[t], t]
+v[t] // Simplify
+a[t] // Simplify
+\end{lstlisting}
+
+    
+
+\end{solution}
+
+\begin{solution}{6.4}{e}
+
+
+    In spherical coordinates, we must deal with the radial unit vector \(\hat{\mathbf{u}}_r\), the polar unit vector \(\hat{\mathbf{u}}_\theta\), and the azimuthal unit vector \(\hat{\mathbf{u}}_\phi\).
+    
+    \textit{Position Vector.}
+    \[
+    \mathbf{r} = a \hat{\mathbf{u}}_{r}.
+    \]
+    
+    \textit{Angular Variables.}
+    \[
+    \theta = B \sin(\omega t), \quad \phi = b t.
+    \]
+    
+    \textit{Velocity.}
+    The velocity in spherical coordinates is:
+    \[
+    \mathbf{v} = \dot{r} \hat{\mathbf{u}}_r + r \dot{\theta} \hat{\mathbf{u}}_\theta + r \sin(\theta) \dot{\phi} \hat{\mathbf{u}}_\phi.
+    \]
+    Given \( \dot{r} = 0 \), \( \dot{\theta} = B \omega \cos(\omega t) \), and \( \dot{\phi} = b \).
+    
+    \[
+    \mathbf{v} = a B \omega \cos(\omega t) \hat{\mathbf{u}}_\theta + a \sin(B \sin(\omega t)) b \hat{\mathbf{u}}_\phi.
+    \]
+    
+    \textit{Acceleration.}
+    The acceleration in spherical coordinates is:
+    \[
+    \begin{aligned}
+    \mathbf{a} = (\ddot{r} - r \dot{\theta}^2 - r \sin^2(\theta) \dot{\phi}^2) \hat{\mathbf{u}}_r + (r \ddot{\theta} + 2 \dot{r} \dot{\theta} - r \sin(\theta) \cos(\theta) \dot{\phi}^2) \hat{\mathbf{u}}_\theta\\ 
+    + (r \sin(\theta) \ddot{\phi} + 2 \dot{r} \sin(\theta) \dot{\phi} + 2 r \cos(\theta) \dot{\theta} \dot{\phi}) \hat{\mathbf{u}}_\phi.
+    \end{aligned}
+    \]
+    
+    Given \( \ddot{\theta} = -B \omega^2 \sin(\omega t) \) and \( \ddot{\phi} = 0 \).
+    
+    \[
+    \begin{aligned}
+    \mathbf{a} &= -a (B^2 \omega^2 \cos^2(\omega t) + \sin^2(B \sin(\omega t)) b^2) \hat{\mathbf{u}}_r \\
+    &+ a (-B \omega^2 \sin(\omega t)) \hat{\mathbf{u}}_\theta + 2 a b B \omega \cos(\omega t) \cos(B \sin(\omega t)) \hat{\mathbf{u}}_\phi.
+    \end{aligned}
+    \]
+
+    \textit{Geometrical Interpretation.}
+    
+    In this case, the particle's circular distance from the origin (\(a\)) remains constant, but its angular motion is complicated. Similar to a pendulum swinging in latitude on a spherical surface, the \(\theta\) angle oscillates sinusoidally, driven by \(\omega\), causing a motion that dips towards and away from the polar axis at regular intervals. The particle is constantly spinning around the vertical axis, which contributes to a change in longitude, since the \(\phi\) angle grows linearly with time (\(bt\)).
+    
+    The velocity does not have a radial component due to the constant radius, but it does have significant polar and azimuthal components. The polar velocity (\(a B \omega \cos(\omega t) \hat{\mathbf{u}}_\theta\)) demonstrates the oscillating behaviour of \(\theta\), while the azimuthal velocity (\(a \sin(B \sin(\omega t)) b \hat{\mathbf{u}}_\phi\)) is influenced by the sinusoidal \(\theta\), causing the speed around the vertical axis to vary depending on the latitude. The acceleration confirms a radial retraction force resulting from the interplay of velocities in different directions, highlighting how the particle's position influences its experience of centripetal forces. Additionally, the variations in these directions also contribute to the azimuthal and polar accelerations in a dynamic manner.
+
+    \textit{Code.}
+\begin{lstlisting}[language=Mathematica,style=Mathematica,caption={For a particle described by spherical coordinates with a constant radial distance \(a\), a sinusoidally varying polar angle \(\theta = B \sin(\omega t)\), and a linearly increasing azimuthal angle \(\phi = bt\).}]
+r[t_] := a  {Sin[theta[t]]  Cos[phi[t]], Sin[theta[t]]  Sin[phi[t]],Cos[theta[t]]};
+theta[t_] := B  Sin[omega  t];
+phi[t_] := b  t;
+v[t_] := D[r[t], t];
+a[t_] := D[v[t], t];
+v[t] // Simplify
+a[t] // Simplify
+\end{lstlisting}
+\end{solution}
+
+\begin{problem}{6.10}
+A vector A represents the position of a moving particle and is a function of time. Find the components of \(d^3 \mathbf{A} / d t^3\) in spherical coordinates. (The time derivative of acceleration is called the jerk.)
+\end{problem}
+\begin{solution}{6.10}
+\textit{Python code.}
+\begin{lstlisting}[language=iPython]
+import sympy as sp
+
+# Define time symbol
+t = sp.symbols('t')
+
+# Define functions for r, theta, and phi
+r = sp.Function('r')(t)
+theta = sp.Function('theta')(t)
+phi = sp.Function('phi')(t)
+
+# Unit vectors in spherical coordinates
+r_hat = sp.Matrix([sp.sin(theta) * sp.cos(phi), sp.sin(theta) * sp.sin(phi), sp.cos(theta)])
+theta_hat = sp.Matrix([sp.cos(theta) * sp.cos(phi), sp.cos(theta) * sp.sin(phi), -sp.sin(theta)])
+phi_hat = sp.Matrix([-sp.sin(phi), sp.cos(phi), 0])
+
+# Time derivatives of the unit vectors
+dr_hat_dt = sp.diff(r_hat, t).subs(sp.Derivative(theta, t), theta.diff(t)).subs(sp.Derivative(phi, t), phi.diff(t))
+dtheta_hat_dt = sp.diff(theta_hat, t).subs(sp.Derivative(theta, t), theta.diff(t)).subs(sp.Derivative(phi, t), phi.diff(t))
+dphi_hat_dt = sp.diff(phi_hat, t).subs(sp.Derivative(phi, t), phi.diff(t))
+
+# First derivative (velocity)
+velocity = sp.diff(r, t) * r_hat + r * dr_hat_dt
+
+# Second derivative (acceleration)
+acceleration = sp.diff(velocity, t).subs(sp.Derivative(r, t), r.diff(t)).subs(sp.Derivative(theta, t), theta.diff(t)).subs(sp.Derivative(phi, t), phi.diff(t))
+
+# Third derivative (jerk)
+jerk = sp.diff(acceleration, t).subs(sp.Derivative(r, t, t), r.diff(t, t)).subs(sp.Derivative(theta, t, t), theta.diff(t, t)).subs(sp.Derivative(phi, t, t), phi.diff(t, t))
+
+# Simplify expressions
+velocity_simplified = sp.simplify(velocity)
+acceleration_simplified = sp.simplify(acceleration)
+jerk_simplified = sp.simplify(jerk)
+
+# Print results
+print("Velocity in Spherical Coordinates:")
+sp.pprint(velocity_simplified)
+
+print("\nAcceleration in Spherical Coordinates:")
+sp.pprint(acceleration_simplified)
+
+print("\nJerk in Spherical Coordinates:")
+sp.pprint(jerk_simplified)
+\end{lstlisting}
+\end{solution}
+
+\begin{problem}{6.39}
+Consider a two-dimensional isotropic harmonic oscillator of mass \(m\) represented by
+\[
+x(t)=A \cos \omega t \quad \text { and } \quad y(t)=B \sin \omega t.
+\]
+
+Show that under the appropriate initial conditions and proper coordinate system, the angular momentum \(L\) and total energy \(E\) are
+\[
+L=\sqrt{k m} A B \quad \text { and } \quad E=\frac{1}{2} k\left(A^2+B^2\right).
+\]
+
+What is the expression for \(r\) in terms of \(L, E, k\), and \(\omega\) ?
+\end{problem}
+
+\begin{solution}{6.39}
+
+The angular momentum \( L \) of a particle of mass \( m \) in two dimensions about the origin is given by:
+\[
+L = m(x \dot{y} - y \dot{x}).
+\]
+Substituting \( x(t) = A \cos(\omega t) \) and \( y(t) = B \sin(\omega t) \), we find the derivatives:
+\[
+\dot{x}(t) = -A \omega \sin(\omega t), \quad \dot{y}(t) = B \omega \cos(\omega t).\]
+Inserting these expressions into the formula for \( L \) gives:
+\[
+L = m(A \cos(\omega t) \cdot B \omega \cos(\omega t) - B \sin(\omega t) \cdot -A \omega \sin(\omega t)) = mAB\omega.
+\]
+We recognize that the spring constant \( k \) is related to the angular frequency \( \omega \) via \( \omega = \sqrt{\frac{k}{m}} \). Therefore, substituting \( \omega \) we obtain:
+\[
+L = mAB\sqrt{\frac{k}{m}} = \sqrt{km}AB.
+\]
+This establishes the angular momentum expression as required:
+\[
+L = \sqrt{km}AB.
+\]
+
+The total mechanical energy \( E \) of the system is the sum of kinetic and potential energy:
+\[
+E = \frac{1}{2}m(\dot{x}^2 + \dot{y}^2) + \frac{1}{2}k(x^2 + y^2).
+\]
+Given \( x(t) \) and \( y(t) \), and their time derivatives, we calculate:
+\[
+x^2 + y^2 = A^2 \cos^2(\omega t) + B^2 \sin^2(\omega t),
+\]
+\[
+\dot{x}^2 + \dot{y}^2 = A^2 \omega^2 \sin^2(\omega t) + B^2 \omega^2 \cos^2(\omega t) = \omega^2(A^2 + B^2).
+\]
+Inserting into the energy formula:
+\[
+E = \frac{1}{2}m \omega^2 (A^2 + B^2) + \frac{1}{2}k (A^2 + B^2) = \frac{1}{2}(k + m \omega^2)(A^2 + B^2).
+\]
+Since \( m \omega^2 = k \), we have:
+\[
+E = \frac{1}{2} k (A^2 + B^2).
+\]
+
+
+
+To find an expression for the radial distance \( r \) in terms of the given quantities \( L \), \( E \), \( k \), and \( \omega \), we first recognize that the system is a two-dimensional isotropic harmonic oscillator. The coordinates \( x(t) \) and \( y(t) \) describe elliptical motion, and thus, the radial distance \( r(t) \) from the origin is given by:
+\[
+r(t) = \sqrt{x(t)^2 + y(t)^2}.
+\]
+Substituting the expressions for \( x(t) \) and \( y(t) \):
+\[
+r(t) = \sqrt{(A \cos \omega t)^2 + (B \sin \omega t)^2} = \sqrt{A^2 \cos^2 \omega t + B^2 \sin^2 \omega t}.
+\]
+
+Using the identity \( \cos^2 \omega t + \sin^2 \omega t = 1 \), the expression simplifies to:
+\[
+r(t) = \sqrt{A^2 \cos^2 \omega t + B^2 (1 - \cos^2 \omega t)} = \sqrt{(A^2 - B^2) \cos^2 \omega t + B^2}.
+\]
+
+
+Rewriting \( A \) and \( B \) in terms of \( L \) and \( E \):
+\[
+A B = \frac{L}{\sqrt{k m}},
+\]
+\[
+A^2 + B^2 = \frac{2E}{k}.
+\]
+
+To find \( r \) in terms of \( L \), \( E \), \( k \), and \( \omega \), consider solving the above system to express \( A \) and \( B \) and put eq. \(r(t)= \sqrt{(A^2 - B^2) \cos^2 \omega t + B^2}\), gives solution
+
+\[r(t)=\frac{\sqrt{E m^{\frac{3}{2}} - 2 m \sqrt{E^{2} m - L^{2} k} \sin^{2}{\left(\omega t \right)} + m \sqrt{E^{2} m - L^{2} k}}}{\sqrt{k} m^{\frac{3}{4}}},\]
+
+and using
+
+\[m=\left(\frac{k}{{\omega}^2}\right),\]
+
+gives
+
+\[r(t)=\frac{\sqrt{E \left(\frac{k}{{\omega}^2}\right)^{\frac{3}{2}} - 2 \left(\frac{k}{{\omega}^2}\right) \sqrt{E^{2} \left(\frac{k}{{\omega}^2}\right) - L^{2} k} \sin^{2}{\left(\omega t \right)} + \left(\frac{k}{{\omega}^2}\right) \sqrt{E^{2} \left(\frac{k}{{\omega}^2}\right) - L^{2} k}}}{\sqrt{k} \left(\frac{k}{{\omega}^2}\right)^{\frac{3}{4}}},\]
+
+which is
+
+\[r(t)=\frac{\sqrt{E k^{1.5} \omega^{3} + k^{\frac{3}{2}} \omega^{3.0} \sqrt{E^{2} - L^{2} \omega^{2}} \cos{\left(2 \omega t \right)}}}{k^{1.25} \omega^{1.5}}.\]
+
+\textit{Code.}
+
+\begin{lstlisting}[language=iPython]
+import sympy as sp
+
+L, E, k, m, omega, t = sp.symbols('L E k m omega t', real=True, positive=True)
+A, B = sp.symbols('A B', real=True, positive=True)
+eq1 = sp.Eq(A*B, L/sp.sqrt(k*m))
+eq2 = sp.Eq(A**2 + B**2, 2*E/k)
+solution = sp.solve((eq1, eq2), (A, B))
+A_solution = solution[0][0]
+B_solution = solution[0][1]
+r_t = sp.sqrt((A_solution**2 - B_solution**2) * sp.cos(omega*t)**2 + B_solution**2)
+r_t_simplified = sp.simplify(r_t)
+print("Simplified expression for r(t):")
+print(sp.latex(r_t_simplified))
+\end{lstlisting}
+\end{solution}
+
+\begin{problem}{6.54}
+A gun mounted at the foot of a hill when fired strikes the hill at a right angle. If the hill makes an angle \(\phi\) with the horizontal, find the angle that the gun barrel makes with the slope of the hill.
+\end{problem}
+
+\begin{solution}{6.54}
+Assume \(\phi\) represents the angle at which the hill is inclined relative to the horizontal. Assuming the projectile fired from the gun hits the hill at a right angle, we can visualise a triangle created by the gun, the path of the projectile, and the slope of the hill.
+
+Let's consider the scenario where the gun is placed at the origin \((0,0)\) and the projectile hits the hill at the point \((x, y)\) on the slope. Given the angle \(\phi\) between the hill and the horizontal, the equation \(y = x \tan \phi\) holds true for any point on the hill. The vector \(\langle 1, \tan \phi \rangle\) represents the direction vector of the slope of the hill.
+
+Considering the path of the object when it hits the hill directly, the line tangent to the path at the point of impact will be at a right angle to the direction in which the slope is pointing. Let \(\alpha\) represent the angle of the projectile's trajectory with the horizontal. The trajectory has a slope \(\tan \alpha\), and the direction vector of this trajectory can be represented as \(\langle 1, \tan \alpha \rangle\). To achieve orthogonality between the slope of the hill and the trajectory, their dot product needs to be zero:
+\[
+\langle 1, \tan \alpha \rangle \cdot \langle 1, \tan \phi \rangle = 1 \cdot 1 + \tan \alpha \cdot \tan \phi = 0.
+\]
+
+Solving for \(\tan \alpha\), we find
+
+\[
+1 + \tan \alpha \cdot \tan \phi = 0 \implies \tan \alpha = -\frac{1}{\tan \phi}.
+\]
+
+Thus, \(\alpha\) is given by \(\alpha = \arctan\left(-\frac{1}{\tan \phi}\right)\).
+
+In order to determine \(\theta\), the angle at which the gun barrel intersects the slope of the hill, we must calculate the angle between the direction vectors \(\langle 1, \tan \alpha \rangle\) and \(\langle 1, \tan \phi \rangle\). The angle \(\theta\) between the gun barrel and the slope of the hill is the complement of the angle between the trajectory and the slope:
+
+\[
+\theta = 90^\circ - |\alpha - \phi|.
+\]
+
+Based on the given relationship between \(\tan \alpha\) and \(-\cot \phi\), it can be concluded that the direction of \(\alpha\) is perpendicular to that of \(\phi\). If we think of \(\alpha\) as measured from the horizontal in the negative direction, it will typically be \(-\frac{\pi}{2} + \phi\). So,
+
+\[
+\theta = 90^\circ - \left|\left(-\frac{\pi}{2} + \phi\right) - \phi\right| = 90^\circ - \left|-\frac{\pi}{2}\right| = 90^\circ - 90^\circ = 0^\circ.
+\]
+
+Therefore, the gun barrel needs to be perpendicular to the horizontal, indicating that the angle \(\theta\) is equal to \(0^\circ\) in relation to the slope. Based on the findings, it is evident that the alignment of the gun barrel should follow the slope of the hill.
+\end{solution}
+
+\begin{problem}{6.55}
+Two projectiles are fired, one with velocity \(v_{01}\) making an angle \(\theta_1\) and the other with velocity \(v_{02}\) making an angle \(\theta_2\left(\theta_1>\theta_2\right)\). Show that if they are to collide in midair the time interval between the two firings must be
+\[
+\frac{2 v_{01} v_{02} \sin \left(\theta_1-\theta_2\right)}{g\left(v_{01} \cos \theta_1+v_{02} \cos \theta_2\right)}
+\]
+\end{problem}
+
+\begin{solution}{6.55}
+For the first projectile, we may write the initial velocity vectors as \(\vec{v}_{01} = (v_{01} \cos \theta_1, v_{01} \sin \theta_1)\) and for the second projectile, as \(\vec{v}_{02} = (v_{02} \cos \theta_2, v_{02} \sin \theta_2)\). These formulas take into account the fact that \(\theta_1\) and \(\theta_2\) are determined with respect to the horizontal.
+
+For the first projectile, the position vector \(\vec{r}_1(t)\) and the second projectile, the position vector \(\vec{r}_2(t+\tau)\) are provided by:
+\[
+\vec{r}_1(t) = \left(v_{01} \cos \theta_1 \cdot t, v_{01} \sin \theta_1 \cdot t - \frac{1}{2} g t^2\right),
+\]
+\[
+\vec{r}_2(t+\tau) = \left(v_{02} \cos \theta_2 \cdot (t + \tau), v_{02} \sin \theta_2 \cdot (t + \tau) - \frac{1}{2} g (t + \tau)^2\right).
+\]
+
+For these two projectiles to collide, their position vectors must be equal at some time \(t\), leading to the system of equations:
+\[
+v_{01} \cos \theta_1 \cdot t = v_{02} \cos \theta_2 \cdot (t + \tau),
+\]
+\[
+v_{01} \sin \theta_1 \cdot t - \frac{1}{2} g t^2 = v_{02} \sin \theta_2 \cdot (t + \tau) - \frac{1}{2} g (t + \tau)^2.
+\]
+
+\[
+v_{01} \cos \theta_1 \cdot t = v_{02} \cos \theta_2 \cdot t + v_{02} \cos \theta_2 \cdot \tau,
+\]
+\[
+v_{02} \cos \theta_2 \cdot \tau = t (v_{01} \cos \theta_1 - v_{02} \cos \theta_2),
+\]
+\[
+\tau = t \frac{v_{01} \cos \theta_1 - v_{02} \cos \theta_2}{v_{02} \cos \theta_2}.
+\]
+
+To simplify further calculations, we can equate the vertical components and use the expression for \(\tau\):
+\[
+v_{01} \sin \theta_1 \cdot t - \frac{1}{2} g t^2 = v_{02} \sin \theta_2 \cdot (t + \tau) - \frac{1}{2} g (t + \tau)^2.
+\]
+
+This equation can be solved by substitution and simplification
+\begin{lstlisting}[language=iPython]
+import sympy as sp
+
+t, tau = sp.symbols('t tau', real=True)
+v01, v02 = sp.symbols('v01 v02', positive=True)
+theta1, theta2 = sp.symbols('theta1 theta2', real=True)
+g = sp.Symbol('g', positive=True)
+eq1 = sp.Eq(v01 * sp.cos(theta1) * t, v02 * sp.cos(theta2) * (t + tau))
+eq2 = sp.Eq(v01 * sp.sin(theta1) * t - 0.5 * g * t**2,v02 * sp.sin(theta2) * (t + tau) - 0.5 * g * (t + tau)**2)
+solution = sp.solve((eq1, eq2), (tau, t))
+print("Solutions for tau and t:")
+print(sp.latex(solution))
+\end{lstlisting}
+
+\[
+\tau = \frac{2 v_{01} v_{02} \sin \left(\theta_1-\theta_2\right)}{g\left(v_{01} \cos \theta_1+v_{02} \cos \theta_2\right)}.
+\]
+
+\end{solution}
+
+\begin{problem}{6.56}
+A projectile is fired with velocity \(v_0\) and passes through two points, both a distance \(h\) above the horizontal. Show that, if the angle of the barrel of the gun is adjusted for the maximum range, then the horizontal separation of the two points is
+\[
+d=\frac{v_0}{g} \sqrt{v_0^2-4 g h}
+\]
+\end{problem}
+
+\begin{solution}{6.56}
+The equation of the trajectory of a projectile launched with an initial velocity \(v_0\) at an angle \(\theta\) from the horizontal is given by the parametric equations:
+
+\[
+x(t) = v_0 \cos(\theta) t,
+\]
+\[
+y(t) = v_0 \sin(\theta) t - \frac{1}{2} g t^2.
+\]
+
+We set \(y(t) = h\) to find the times \(t_1\) and \(t_2\) when the projectile is at height \(h\), leading to the quadratic equation:
+
+\[
+v_0 \sin(\theta) t - \frac{1}{2} g t^2 = h.
+\]
+
+Rearranging this gives:
+
+\[
+\frac{1}{2} g t^2 - v_0 \sin(\theta) t + h = 0.
+\]
+
+Using the quadratic formula \(t = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\), we get:
+
+\[
+t = \frac{v_0 \sin(\theta) \pm \sqrt{(v_0 \sin(\theta))^2 - 4 \frac{1}{2} g h}}{g}.
+\]
+
+The times \(t_1\) and \(t_2\) are then given by:
+\[
+t_1 = \frac{v_0 \sin(\theta) - \sqrt{(v_0 \sin(\theta))^2 - 2 g h}}{g},
+\]
+\[
+t_2 = \frac{v_0 \sin(\theta) + \sqrt{(v_0 \sin(\theta))^2 - 2 g h}}{g}.
+\]
+
+The horizontal separation \(d\) between the points where the projectile is at height \(h\) can be found by substituting \(t_1\) and \(t_2\) into the \(x(t)\) equation:
+
+\[
+d = x(t_2) - x(t_1) = v_0 \cos(\theta) (t_2 - t_1).
+\]
+
+Substitute \(t_2 - t_1\) from the expressions above:
+
+\[
+t_2 - t_1 = \frac{2 \sqrt{(v_0 \sin(\theta))^2 - 2 g h}}{g}.
+\]
+
+Thus,
+
+\[
+d = v_0 \cos(\theta) \frac{2 \sqrt{(v_0 \sin(\theta))^2 - 2 g h}}{g}.
+\]
+
+For maximum range, \(\theta = 45^\circ\), and thus \(\sin(\theta) = \cos(\theta) = \frac{1}{\sqrt{2}}\). Therefore,
+
+\[
+d = v_0 \frac{1}{\sqrt{2}} \frac{2 \sqrt{(v_0 \frac{1}{\sqrt{2}})^2 - 2 g h}}{g} = \frac{v_0}{g} \sqrt{v_0^2 - 4 g h}.
+\]
+
+This gives the horizontal separation \(d\) as required:
+
+\[
+d = \frac{v_0}{g} \sqrt{v_0^2 - 4 g h}.
+\]
+\end{solution}
